@@ -58,7 +58,7 @@ class PricingFormatter:
                 value=(
                     "**Note:** Some UPS services are currently unavailable for USA destinations due to trade policy "
                     "restrictions under the Trump administration's tariff regulations.\n\n"
-                    "✅ **Showing only available services below** (FedEx, La Poste, Spring, and select UPS options)."
+                    "✅ **Showing only available services below** (FedEx, Delivengo, Spring, and select UPS options)."
                 ),
                 inline=False
             )
