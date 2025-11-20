@@ -82,8 +82,8 @@ class PricingBot(commands.Bot):
         logger.info(f"✅ Bot connected as {self.user}")
         logger.info(f"📊 Servers: {len(self.guilds)}")
         logger.info(f"👥 Users: {sum(g.member_count for g in self.guilds)}")
-        logger.info(f"🚚 Carriers: 4 (La Poste, Spring, FedEx, UPS)")
-        logger.info(f"📦 Services: 6")
+        logger.info(f"🚚 Carriers: 4 (Delivengo, Spring, FedEx, UPS)")
+        logger.info(f"📦 Services: 10 (6 CSV + UPS API)")
         logger.info("=" * 50)
 
         # Set bot status
