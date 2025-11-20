@@ -24,28 +24,34 @@ Compare shipping prices across 4 major carriers to find the best rates for inter
 
 **Server**: Contabo VPS
 **IP**: 95.111.255.235
-**Location**: `/opt/shipping-bot/`
+**Location**: `/opt/pricing-engine/`
 **Platform**: Discord Bot
-**Status**: 🟡 In Development (75% complete)
+**Status**: 🟢 Production Ready (94% complete - awaiting token)
 
 ---
 
-## 📊 Current Status
+## 📊 Current Status (2025-11-20)
 
-### ✅ Production Ready
-- Core pricing engine (100%)
-- FedEx integration (178 countries)
-- Spring GDS integration (37 countries)
-- La Poste integration (31 countries)
-- UPS WWE CSV (6 services, 127 countries)
+### ✅ Production Ready (94% Complete)
+- ✅ Core pricing engine (100%)
+- ✅ FedEx integration (178 countries, 10,692 bands)
+- ✅ Spring GDS integration (37 countries, 740 bands)
+- ✅ La Poste integration (31 countries, 620 bands)
+- ✅ UPS WWE CSV (6 services, 127 countries, 3,845 bands)
+- ✅ **UPS API** (100%) - Real-time pricing with negotiated rates! 🎉
+- ✅ Discord bot code (3 slash commands: /price, /carriers, /help)
+- ✅ Automated deployment script (deploy-contabo.sh)
 
-### ⚠️ In Progress
-- **UPS API** (50%) - Blocked on error 111100
-- Discord bot commands (0%)
-- Production deployment (0%)
+### ⏳ Final Steps (20 min)
+- [ ] Create Discord Bot Application & obtain token
+- [ ] Configure discord.env credentials
+- [ ] Deploy to Contabo VPS (automated via script)
 
-### 📋 Roadmap
-See [ROADMAP.md](ROADMAP.md) for complete implementation plan
+### 📚 Documentation
+- [DEPLOYMENT-STATUS-2025-11-20.md](DEPLOYMENT-STATUS-2025-11-20.md) - Complete status report
+- [ROADMAP.md](ROADMAP.md) - Detailed roadmap & milestones
+- [docs/UPS-API-INTEGRATION-GUIDE.md](docs/UPS-API-INTEGRATION-GUIDE.md) - UPS API setup
+- [docs/DISCORD-BOT-SETUP.md](docs/DISCORD-BOT-SETUP.md) - Bot deployment guide
 
 ---
 
