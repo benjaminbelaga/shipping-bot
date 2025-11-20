@@ -7,6 +7,10 @@ import discord
 from discord.ext import commands
 from typing import Optional
 import logging
+from dotenv import load_dotenv
+
+# Load environment variables from .env file
+load_dotenv()
 
 from src.engine.engine import PricingEngine, ORIGIN_PARIS
 from .config import config
