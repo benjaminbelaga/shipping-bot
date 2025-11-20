@@ -129,21 +129,31 @@ def setup_commands(bot: 'PricingBot'):
                 logger.warning(f"⚠️ UPS API unavailable: {e}")
                 # Continue without API rates
 
-            # Sort all offers by price
-            offers.sort(key=lambda o: float(o.total))
+            # Track if there were suspended services (for warning display)
+            has_suspended_services = any(o.is_suspended for o in offers)
+
+            # Filter out suspended services (show only available options)
+            # The general warning banner is sufficient - no need to show unusable services
+            available_offers = [o for o in offers if not o.is_suspended]
+
+            # Sort available offers by price
+            available_offers.sort(key=lambda o: float(o.total))
 
             # Rename UPS WWE carriers to distinguish from UPS API
-            for offer in offers:
+            for offer in available_offers:
                 if offer.carrier_code == "UPS" and not offer.carrier_code.startswith("UPS_API"):
                     offer.carrier_name = "UPS WWE"
 
             # Filter by carriers if specified
             if carrier_filter:
-                offers = [
-                    o for o in offers
+                available_offers = [
+                    o for o in available_offers
                     if o.carrier_code.upper() in carrier_filter or
                        any(cf in o.carrier_name.upper() for cf in carrier_filter)
                 ]
+
+            # Pass has_suspended flag to formatter for warning display
+            offers = available_offers
 
             # Create and send embed
             embed = bot.formatter.create_offers_embed(

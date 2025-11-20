@@ -42,26 +42,23 @@ class PricingFormatter:
 
         # Check if destination is USA for Trump tariff warning
         is_usa = "US" in country_name.upper() or "ÉTATS-UNIS" in country_name.upper() or "USA" in country_name.upper()
-        has_suspended = any(offer.is_suspended for offer in offers)
 
         # Create embed with results
         embed = discord.Embed(
             title=f"📦 Shipping Quotes: {weight_kg}kg → {country_name}",
-            description=f"Found **{len(offers)}** offer(s) - Sorted by price (cheapest first)",
+            description=f"Found **{len(offers)}** available offer(s) - Sorted by price (cheapest first)",
             color=config.embed_color
         )
 
-        # Add Trump tariff warning if USA destination with suspended services
-        if is_usa and has_suspended:
+        # Add Trump tariff warning if USA destination
+        # Note: Suspended services are filtered out, so we only show available options
+        if is_usa:
             embed.add_field(
-                name="⚠️ Important Notice - USA Tariffs",
+                name="ℹ️ USA Shipping Notice",
                 value=(
-                    "**Some UPS services are currently suspended for USA destinations** due to the trade policy changes "
-                    "implemented under the Trump administration's tariff regulations. These restrictions affect certain "
-                    "shipment categories and customs procedures.\n\n"
-                    "**Available alternatives:** We recommend using FedEx, La Poste, or Spring services for USA shipments, "
-                    "which remain fully operational and often provide competitive rates.\n\n"
-                    "❗ Suspended services are marked with ⛔ below."
+                    "**Note:** Some UPS services are currently unavailable for USA destinations due to trade policy "
+                    "restrictions under the Trump administration's tariff regulations.\n\n"
+                    "✅ **Showing only available services below** (FedEx, La Poste, Spring, and select UPS options)."
                 ),
                 inline=False
             )
