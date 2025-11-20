@@ -265,7 +265,10 @@ class UPSAPIClient:
             logger.info(f"🔄 Shop failed, trying individual service codes for {api_type}")
 
             # Service codes to try based on API type
-            service_codes = ['11', '65'] if api_type == 'STANDARD' else ['96']
+            # STANDARD (Europe): 11=Standard, 65=Express Saver
+            # WWE (Worldwide): 07=Express, 08=Expedited, 65=Express Saver
+            # NOTE: WWE Economy (96) uses CSV pricing (negotiated rates), not API
+            service_codes = ['11', '65'] if api_type == 'STANDARD' else ['07', '08', '65']
 
             for service_code in service_codes:
                 service_rates = self._get_rates_internal(
