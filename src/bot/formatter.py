@@ -40,6 +40,10 @@ class PricingFormatter:
             )
             return embed
 
+        # Check if destination is USA for Trump tariff warning
+        is_usa = "US" in country_name.upper() or "ÉTATS-UNIS" in country_name.upper() or "USA" in country_name.upper()
+        has_suspended = any(offer.is_suspended for offer in offers)
+
         # Create embed with results
         embed = discord.Embed(
             title=f"📦 Shipping Quotes: {weight_kg}kg → {country_name}",
@@ -47,40 +51,64 @@ class PricingFormatter:
             color=config.embed_color
         )
 
-        # Add each offer as a field
+        # Add Trump tariff warning if USA destination with suspended services
+        if is_usa and has_suspended:
+            embed.add_field(
+                name="⚠️ Important Notice - USA Tariffs",
+                value=(
+                    "**Some UPS services are currently suspended for USA destinations** due to the trade policy changes "
+                    "implemented under the Trump administration's tariff regulations. These restrictions affect certain "
+                    "shipment categories and customs procedures.\n\n"
+                    "**Available alternatives:** We recommend using FedEx, La Poste, or Spring services for USA shipments, "
+                    "which remain fully operational and often provide competitive rates.\n\n"
+                    "❗ Suspended services are marked with ⛔ below."
+                ),
+                inline=False
+            )
+
+        # Add each offer as a field (use inline=True for 2-column layout)
         for i, offer in enumerate(offers[:config.max_offers], 1):
             # Medal emojis for top 3
             medal = {1: "🥇", 2: "🥈", 3: "🥉"}.get(i, f"{i}.")
 
-            # Format price components
+            # Add suspension emoji if service is suspended
+            if offer.is_suspended:
+                medal = "⛔"
+
+            # Format price components with better alignment
             freight_str = f"{float(offer.freight):.2f}"
             surcharges_str = f"{float(offer.surcharges):+.2f}" if offer.surcharges != 0 else ""
             total_str = f"**{float(offer.total):.2f} {offer.currency}**"
 
-            # Build field value
+            # Build field value with cleaner formatting
             value_parts = [
-                f"💰 Total: {total_str}",
-                f"📄 Freight: {freight_str} {offer.currency}",
+                f"💰 **Total:** {total_str}",
+                f"📄 Freight: `{freight_str} {offer.currency}`",
             ]
 
             if surcharges_str:
                 emoji = "💸" if offer.surcharges < 0 else "➕"
-                value_parts.append(f"{emoji} Surcharges: {surcharges_str} {offer.currency}")
+                value_parts.append(f"{emoji} Surcharges: `{surcharges_str} {offer.currency}`")
 
-            value_parts.append(f"📌 Service: `{offer.service_code}`")
+            value_parts.append(f"🏷️ Service: `{offer.service_code}`")
+
+            # Add warning if suspended
+            if offer.is_suspended and offer.warning:
+                value_parts.append(f"⚠️ *{offer.warning}*")
 
             field_name = f"{medal} {offer.carrier_name}"
             field_value = "\n".join(value_parts)
 
+            # Use inline=True for compact 2-column layout (max 2 per row on desktop)
             embed.add_field(
                 name=field_name,
                 value=field_value,
-                inline=False
+                inline=True  # Changed from False to enable column layout
             )
 
         # Add footer with metadata
         embed.set_footer(
-            text=f"Query: {destination} | Weight: {weight_kg}kg | Pricing Engine v0.3.0"
+            text=f"Query: {destination} | Weight: {weight_kg}kg | Pricing Engine v0.4.0 (with UPS API)"
         )
 
         return embed

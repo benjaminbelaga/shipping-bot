@@ -6,10 +6,14 @@ Implements /price, /carriers, and /help commands
 import discord
 from discord import app_commands
 import re
+import logging
 from typing import Optional, TYPE_CHECKING
+from decimal import Decimal
 
 if TYPE_CHECKING:
     from .bot import PricingBot
+
+logger = logging.getLogger(__name__)
 
 
 def setup_commands(bot: 'PricingBot'):
@@ -79,15 +83,8 @@ def setup_commands(bot: 'PricingBot'):
             if carriers:
                 carrier_filter = [c.strip().upper() for c in carriers.split(',')]
 
-            # Query pricing engine
+            # Query pricing engine (CSV data - UPS WWE, FedEx, Spring, La Poste)
             offers = bot.pricing_engine.price(destination, weight_kg, debug=False)
-
-            # Filter by carriers if specified
-            if carrier_filter:
-                offers = [
-                    o for o in offers
-                    if o.carrier_code.upper() in carrier_filter
-                ]
 
             # Resolve country name for display
             country_iso2 = bot.pricing_engine.resolver.resolve(destination)
@@ -96,6 +93,57 @@ def setup_commands(bot: 'PricingBot'):
                 resolved_name = bot.pricing_engine.resolver.get_name(country_iso2)
                 if resolved_name:
                     country_name = f"{resolved_name} ({country_iso2})"
+
+            # Add UPS API real-time rates (if available)
+            try:
+                from src.integrations.ups_api import UPSAPIClient
+                from src.engine.engine import PriceOffer
+
+                ups_client = UPSAPIClient()
+                ups_api_rates = ups_client.get_shipping_rates(
+                    weight_kg=weight_kg,
+                    destination_country=country_iso2
+                )
+
+                # Convert UPS API results to PriceOffer format
+                for rate in ups_api_rates:
+                    # Determine carrier name based on API type
+                    carrier_name = "UPS (Real-time)" if rate['api_type'] == 'WWE' else "UPS Standard"
+
+                    ups_offer = PriceOffer(
+                        carrier_code="UPS_API",
+                        carrier_name=carrier_name,
+                        service_code=rate['service_code'],
+                        service_label=rate['service_name'],
+                        freight=rate['price'],
+                        surcharges=Decimal('0'),  # API returns total price
+                        total=rate['price'],
+                        currency=rate['currency'],
+                        scope_code=f"UPS_API_{rate['api_type']}",
+                        band_details=f"API Quote - {rate.get('delivery_days', 'N/A')} days"
+                    )
+                    offers.append(ups_offer)
+
+                logger.info(f"✅ Added {len(ups_api_rates)} UPS API real-time rates")
+            except Exception as e:
+                logger.warning(f"⚠️ UPS API unavailable: {e}")
+                # Continue without API rates
+
+            # Sort all offers by price
+            offers.sort(key=lambda o: float(o.total))
+
+            # Rename UPS WWE carriers to distinguish from UPS API
+            for offer in offers:
+                if offer.carrier_code == "UPS" and not offer.carrier_code.startswith("UPS_API"):
+                    offer.carrier_name = "UPS WWE"
+
+            # Filter by carriers if specified
+            if carrier_filter:
+                offers = [
+                    o for o in offers
+                    if o.carrier_code.upper() in carrier_filter or
+                       any(cf in o.carrier_name.upper() for cf in carrier_filter)
+                ]
 
             # Create and send embed
             embed = bot.formatter.create_offers_embed(
