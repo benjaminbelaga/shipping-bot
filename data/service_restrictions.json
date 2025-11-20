@@ -1,0 +1,42 @@
+{
+  "restrictions": [
+    {
+      "service_code": "UPS_ECONOMY_DDU_EXPORT_FR",
+      "country_iso2": "US",
+      "status": "SUSPENDED",
+      "reason": "Tarifs douaniers Trump 2025",
+      "effective_date": "2025-01-20",
+      "alternative_services": ["FDX_IP_EXPORT", "SPRING_ROW_HOME"],
+      "message_fr": "⚠️ Service temporairement suspendu pour les USA suite aux tarifs Trump 2025. Utilisez FedEx ou Spring.",
+      "message_en": "⚠️ Service temporarily suspended for USA due to Trump 2025 tariffs. Use FedEx or Spring instead."
+    },
+    {
+      "service_code": "UPS_ECONOMY_DDU_IMPORT_NL",
+      "country_iso2": "US",
+      "status": "SUSPENDED",
+      "reason": "Tarifs douaniers Trump 2025",
+      "effective_date": "2025-01-20",
+      "alternative_services": ["FDX_IP_EXPORT"],
+      "message_fr": "⚠️ Service suspendu pour les USA (tarifs Trump 2025)",
+      "message_en": "⚠️ Service suspended for USA (Trump 2025 tariffs)"
+    },
+    {
+      "service_code": "UPS_EXPRESS_DDP_IMPORT_NL",
+      "country_iso2": "US",
+      "status": "SUSPENDED",
+      "reason": "Tarifs douaniers Trump 2025",
+      "effective_date": "2025-01-20",
+      "alternative_services": ["FDX_IP_EXPORT"],
+      "message_fr": "⚠️ Service suspendu pour les USA (tarifs Trump 2025)",
+      "message_en": "⚠️ Service suspended for USA (Trump 2025 tariffs)"
+    }
+  ],
+  "notes": {
+    "UPS_STANDARD": "Service Ground économique pour Asie (10 pays: CN, GB, ID, JP, KH, LA, MY, PH, TW, VN)",
+    "UPS_EXPRESS_SAVER": "Service Express premium pour Asie (mêmes 10 pays que Standard)",
+    "UPS_ECONOMY_DDU_EXPORT_FR": "Service Economy worldwide (88 pays) - Équivalent UPS WWE - DDU (client paie douanes)",
+    "UPS_ECONOMY_DDU_IMPORT_NL": "Import vers Pays-Bas uniquement (2 pays: GB, US)",
+    "UPS_EXPRESS_DDP_EXPORT_DE": "Export depuis Allemagne (1 pays: GB) - DDP (YOYAKU paie douanes)",
+    "UPS_EXPRESS_DDP_IMPORT_NL": "Import Express vers Pays-Bas (3 pays: CA, GB, US)"
+  }
+}

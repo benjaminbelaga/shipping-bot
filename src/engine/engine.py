@@ -2,12 +2,35 @@
 Pricing Engine - Moteur de tarification unifié
 """
 
+import json
+from pathlib import Path
 from decimal import Decimal
 from typing import List, Dict, Optional
 from dataclasses import dataclass
 
 from .loader import DataLoader, TariffScope, TariffBand, SurchargeRule
 from .country_resolver import CountryResolver
+
+
+@dataclass
+class OriginAddress:
+    """Adresse d'origine pour les calculs d'expédition"""
+    name: str  # e.g., "YOYAKU SARL"
+    address_line: str  # e.g., "14 boulevard de la Chapelle"
+    city: str  # e.g., "PARIS"
+    postal_code: str  # e.g., "75018"
+    country_iso2: str  # e.g., "FR"
+    state_province: str = ""  # Optional, for countries like US
+
+
+# Predefined origin addresses
+ORIGIN_PARIS = OriginAddress(
+    name="YOYAKU SARL",
+    address_line="14 boulevard de la Chapelle",
+    city="PARIS",
+    postal_code="75018",
+    country_iso2="FR"
+)
 
 
 @dataclass
@@ -23,18 +46,39 @@ class PriceOffer:
     currency: str
     scope_code: str
     band_details: str
+    warning: Optional[str] = None  # Warning message if service restricted
+    is_suspended: bool = False  # True if service suspended for this destination
 
 
 class PricingEngine:
     """Moteur de tarification principal"""
 
-    def __init__(self, loader: DataLoader = None):
+    def __init__(self, loader: DataLoader = None, origin: Optional[OriginAddress] = None):
+        """
+        Initialize Pricing Engine
+
+        Args:
+            loader: DataLoader instance (creates default if None)
+            origin: Origin address for shipments (default: None)
+                    Use ORIGIN_PARIS for YOYAKU shipments from Paris
+
+        Example:
+            # Generic pricing (no origin)
+            engine = PricingEngine()
+
+            # YOYAKU-specific pricing with fixed Paris origin
+            engine = PricingEngine(origin=ORIGIN_PARIS)
+        """
         if loader is None:
             loader = DataLoader()
             loader.load_all()
 
         self.loader = loader
         self.resolver = CountryResolver()
+        self.origin = origin
+
+        # Load service restrictions (Trump tariffs, etc.)
+        self.restrictions = self._load_restrictions()
 
     def price(self, dest: str, weight_kg: float, debug: bool = False) -> List[PriceOffer]:
         """
@@ -99,6 +143,9 @@ class PricingEngine:
             # Carrier info
             carrier = self.loader.carriers[service.carrier_id]
 
+            # Check for service restrictions
+            warning, is_suspended = self._check_restriction(service.code, dest_iso2)
+
             offer = PriceOffer(
                 carrier_code=carrier.code,
                 carrier_name=carrier.name,
@@ -109,7 +156,9 @@ class PricingEngine:
                 total=total,
                 currency=carrier.currency,
                 scope_code=scope.code,
-                band_details=f"{band.min_weight_kg}-{band.max_weight_kg}kg"
+                band_details=f"{band.min_weight_kg}-{band.max_weight_kg}kg",
+                warning=warning,
+                is_suspended=is_suspended
             )
 
             offers.append(offer)
@@ -274,6 +323,52 @@ class PricingEngine:
                 return False
 
         return True
+
+    def _load_restrictions(self) -> Dict:
+        """
+        Load service restrictions from JSON config
+
+        Returns:
+            Dict with restrictions indexed by (service_code, country_iso2)
+        """
+        restrictions_file = Path(__file__).parent.parent.parent / "data" / "service_restrictions.json"
+
+        if not restrictions_file.exists():
+            return {}
+
+        try:
+            with open(restrictions_file, 'r', encoding='utf-8') as f:
+                data = json.load(f)
+
+            # Index by (service_code, country_iso2)
+            indexed = {}
+            for restriction in data.get('restrictions', []):
+                key = (restriction['service_code'], restriction['country_iso2'])
+                indexed[key] = restriction
+
+            return indexed
+        except Exception as e:
+            print(f"⚠️  Warning: Could not load restrictions: {e}")
+            return {}
+
+    def _check_restriction(self, service_code: str, dest_iso2: str) -> tuple:
+        """
+        Check if a service has restrictions for a destination
+
+        Returns:
+            (warning_message, is_suspended)
+        """
+        key = (service_code, dest_iso2)
+        restriction = self.restrictions.get(key)
+
+        if not restriction:
+            return (None, False)
+
+        status = restriction.get('status', 'UNKNOWN')
+        is_suspended = status == 'SUSPENDED'
+        warning = restriction.get('message_fr', '⚠️ Service restreint')
+
+        return (warning, is_suspended)
 
 
 def main():

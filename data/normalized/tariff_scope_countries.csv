@@ -157,7 +157,7 @@ scope_id,country_iso2
 42,MU
 42,MN
 42,MZ
-42,NA
+42,
 42,NC
 42,NE
 42,NG
@@ -337,3 +337,9 @@ scope_id,country_iso2
 195,ZA
 196,ZM
 197,ZW
+198,GB
+199,US
+200,GB
+201,CA
+202,GB
+203,US
