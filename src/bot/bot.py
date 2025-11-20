@@ -8,7 +8,7 @@ from discord.ext import commands
 from typing import Optional
 import logging
 
-from src.engine.engine import PricingEngine
+from src.engine.engine import PricingEngine, ORIGIN_PARIS
 from .config import config
 from .formatter import PricingFormatter
 
@@ -37,10 +37,10 @@ class PricingBot(commands.Bot):
             help_command=None  # We'll use custom /help command
         )
 
-        # Initialize pricing engine
+        # Initialize pricing engine with YOYAKU Paris origin
         logger.info("📦 Loading pricing engine...")
-        self.pricing_engine = PricingEngine()
-        logger.info("✅ Pricing engine loaded")
+        self.pricing_engine = PricingEngine(origin=ORIGIN_PARIS)
+        logger.info("✅ Pricing engine loaded (origin: Paris)")
 
         # Formatter for Discord embeds
         self.formatter = PricingFormatter()

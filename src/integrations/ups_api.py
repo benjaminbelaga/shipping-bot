@@ -46,20 +46,18 @@ class UPSCredentialsManager:
         """
         credentials_file = os.path.expanduser("~/.credentials/yoyaku/api-keys/ups.env")
 
-        # Default fallback values (from old bot)
+        # Initialize empty configs - NO hardcoded fallbacks
         configs = {
-            'STANDARD': UPSCredentials(
-                client_id=os.getenv('UPS_STANDARD_CLIENT_ID', 'ncNlUVwO8H5jl2rXFwLmDkVXVlErtAEm5hLWepUOyPY1qqbY'),
-                client_secret=os.getenv('UPS_STANDARD_CLIENT_SECRET', 'GIREojIxhNgg2Sug0S6XTOEuja4oDxi3vLzgqIcELeRbybSXv05wpFXnGMdAiLjk'),
-                account_number=os.getenv('UPS_STANDARD_ACCOUNT', 'C394D0'),
-                description='Europe - Express and Standard services'
-            ),
-            'WWE': UPSCredentials(
-                client_id=os.getenv('UPS_WWE_CLIENT_ID', 'IXqQKQBGAGSGOG5GZ9AvJGzD7VHKhAqPgx8M5Q7Y7GJXQhFG'),
-                client_secret=os.getenv('UPS_WWE_CLIENT_SECRET', 'G0GAGGyJaJBMGGbQGyZGWUlGLMVa7AAGM5GJAGSd5FAQIAGHGGqQDpBBHGqHBvs'),
-                account_number=os.getenv('UPS_WWE_ACCOUNT', 'R5J577'),
-                description='Worldwide - Economy service only'
-            )
+            'STANDARD': {
+                'client_id': os.getenv('UPS_STANDARD_CLIENT_ID'),
+                'client_secret': os.getenv('UPS_STANDARD_CLIENT_SECRET'),
+                'account_number': os.getenv('UPS_STANDARD_ACCOUNT'),
+            },
+            'WWE': {
+                'client_id': os.getenv('UPS_WWE_CLIENT_ID'),
+                'client_secret': os.getenv('UPS_WWE_CLIENT_SECRET'),
+                'account_number': os.getenv('UPS_WWE_ACCOUNT'),
+            }
         }
 
         # Try to load from file
@@ -77,25 +75,43 @@ class UPSCredentialsManager:
 
                             # Parse UPS credentials
                             if key == 'UPS_STANDARD_CLIENT_ID':
-                                configs['STANDARD'].client_id = value
+                                configs['STANDARD']['client_id'] = value
                             elif key == 'UPS_STANDARD_CLIENT_SECRET':
-                                configs['STANDARD'].client_secret = value
+                                configs['STANDARD']['client_secret'] = value
                             elif key == 'UPS_STANDARD_ACCOUNT':
-                                configs['STANDARD'].account_number = value
+                                configs['STANDARD']['account_number'] = value
                             elif key == 'UPS_WWE_CLIENT_ID':
-                                configs['WWE'].client_id = value
+                                configs['WWE']['client_id'] = value
                             elif key == 'UPS_WWE_CLIENT_SECRET':
-                                configs['WWE'].client_secret = value
+                                configs['WWE']['client_secret'] = value
                             elif key == 'UPS_WWE_ACCOUNT':
-                                configs['WWE'].account_number = value
+                                configs['WWE']['account_number'] = value
 
                 logger.info("✅ UPS credentials loaded from ups.env")
             except Exception as e:
-                logger.warning(f"⚠️ Error loading ups.env: {e}, using defaults")
+                raise RuntimeError(f"❌ Error loading UPS credentials from {credentials_file}: {e}")
         else:
-            logger.warning(f"⚠️ Credentials file not found: {credentials_file}, using defaults")
+            logger.warning(f"⚠️ Credentials file not found: {credentials_file}")
 
-        return configs
+        # Validate credentials - fail fast if incomplete
+        result = {}
+        for api_type in ['STANDARD', 'WWE']:
+            cfg = configs[api_type]
+
+            if not all([cfg.get('client_id'), cfg.get('client_secret'), cfg.get('account_number')]):
+                raise RuntimeError(
+                    f"❌ Incomplete UPS {api_type} credentials. Required: "
+                    f"UPS_{api_type}_CLIENT_ID, UPS_{api_type}_CLIENT_SECRET, UPS_{api_type}_ACCOUNT"
+                )
+
+            result[api_type] = UPSCredentials(
+                client_id=cfg['client_id'],
+                client_secret=cfg['client_secret'],
+                account_number=cfg['account_number'],
+                description=f"{api_type} API"
+            )
+
+        return result
 
 
 class UPSAPIClient:
@@ -213,7 +229,8 @@ class UPSAPIClient:
         weight_kg: float,
         destination_country: str,
         destination_city: str = "Main City",
-        destination_postal: str = "00000"
+        destination_postal: str = "00000",
+        fallback_to_individual: bool = True
     ) -> List[Dict[str, Any]]:
         """
         Get real-time shipping rates from UPS API
@@ -223,6 +240,7 @@ class UPSAPIClient:
             destination_country: ISO2 country code (e.g., 'US', 'GB')
             destination_city: Destination city name
             destination_postal: Destination postal code
+            fallback_to_individual: If Shop fails, try individual service codes
 
         Returns:
             List of rate dictionaries with keys:
@@ -236,6 +254,51 @@ class UPSAPIClient:
         # Determine which API to use
         api_type = 'STANDARD' if destination_country in self.EUROPE_COUNTRIES else 'WWE'
 
+        # Try "Shop" first (all services)
+        rates = self._get_rates_internal(
+            weight_kg, destination_country, destination_city,
+            destination_postal, api_type, request_option='Shop'
+        )
+
+        # If Shop fails and fallback enabled, try individual service codes
+        if not rates and fallback_to_individual:
+            logger.info(f"🔄 Shop failed, trying individual service codes for {api_type}")
+
+            # Service codes to try based on API type
+            service_codes = ['11', '65'] if api_type == 'STANDARD' else ['96']
+
+            for service_code in service_codes:
+                service_rates = self._get_rates_internal(
+                    weight_kg, destination_country, destination_city,
+                    destination_postal, api_type, request_option='Rate',
+                    service_code=service_code
+                )
+                if service_rates:
+                    rates.extend(service_rates)
+
+            if rates:
+                logger.info(f"✅ Fallback successful: {len(rates)} rates obtained via individual service codes")
+
+        return rates
+
+    def _get_rates_internal(
+        self,
+        weight_kg: float,
+        destination_country: str,
+        destination_city: str,
+        destination_postal: str,
+        api_type: str,
+        request_option: str = 'Shop',
+        service_code: Optional[str] = None
+    ) -> List[Dict[str, Any]]:
+        """
+        Internal method to get rates with specific request option
+
+        Args:
+            request_option: 'Shop' (all services) or 'Rate' (specific service)
+            service_code: Required if request_option='Rate'
+        """
+
         try:
             # Get access token
             access_token = self.get_access_token(api_type)
@@ -244,57 +307,67 @@ class UPSAPIClient:
             # Build request payload
             rating_url = f"{self.base_url}/rating/v1/Rate"
 
+            # Build shipment structure
+            shipment = {
+                "Shipper": {
+                    "Name": "YOYAKU SARL",
+                    "ShipperNumber": config.account_number,
+                    "Address": self.origin_address
+                },
+                "ShipTo": {
+                    "Name": "Customer",
+                    "Address": {
+                        "City": destination_city,
+                        "CountryCode": destination_country,
+                        "PostalCode": destination_postal
+                    }
+                },
+                "ShipFrom": {
+                    "Name": "YOYAKU SARL",
+                    "Address": self.origin_address
+                },
+                "Package": [
+                    {
+                        "PackagingType": {
+                            "Code": "02",  # Customer Supplied Package
+                            "Description": "Customer Supplied Package"
+                        },
+                        "Dimensions": {
+                            "UnitOfMeasurement": {
+                                "Code": "CM",
+                                "Description": "Centimeters"
+                            },
+                            "Length": "30",
+                            "Width": "30",
+                            "Height": "15"
+                        },
+                        "PackageWeight": {
+                            "UnitOfMeasurement": {
+                                "Code": "KGS",
+                                "Description": "Kilograms"
+                            },
+                            "Weight": str(weight_kg)
+                        }
+                    }
+                ]
+            }
+
+            # Add specific service code if using "Rate" option
+            if request_option == 'Rate' and service_code:
+                shipment["Service"] = {
+                    "Code": service_code,
+                    "Description": self.SERVICE_NAMES.get(service_code, f"Service {service_code}")
+                }
+
             payload = {
                 "RateRequest": {
                     "Request": {
-                        "RequestOption": "Shop",  # Get all available services
+                        "RequestOption": request_option,  # 'Shop' or 'Rate'
                         "TransactionReference": {
                             "CustomerContext": f"YOYAKU-{int(time.time())}"
                         }
                     },
-                    "Shipment": {
-                        "Shipper": {
-                            "Name": "YOYAKU SARL",
-                            "ShipperNumber": config.account_number,
-                            "Address": self.origin_address
-                        },
-                        "ShipTo": {
-                            "Name": "Customer",
-                            "Address": {
-                                "City": destination_city,
-                                "CountryCode": destination_country,
-                                "PostalCode": destination_postal
-                            }
-                        },
-                        "ShipFrom": {
-                            "Name": "YOYAKU SARL",
-                            "Address": self.origin_address
-                        },
-                        "Package": [
-                            {
-                                "PackagingType": {
-                                    "Code": "02",  # Customer Supplied Package
-                                    "Description": "Customer Supplied Package"
-                                },
-                                "Dimensions": {
-                                    "UnitOfMeasurement": {
-                                        "Code": "CM",
-                                        "Description": "Centimeters"
-                                    },
-                                    "Length": "30",
-                                    "Width": "30",
-                                    "Height": "15"
-                                },
-                                "PackageWeight": {
-                                    "UnitOfMeasurement": {
-                                        "Code": "KGS",
-                                        "Description": "Kilograms"
-                                    },
-                                    "Weight": str(weight_kg)
-                                }
-                            }
-                        ]
-                    }
+                    "Shipment": shipment
                 }
             }
 
@@ -305,18 +378,48 @@ class UPSAPIClient:
             }
 
             # API call
+            req_desc = f"RequestOption={request_option}"
+            if service_code:
+                req_desc += f", Service={service_code}"
             logger.debug(f"📤 UPS API {api_type} request to {rating_url}")
-            logger.debug(f"   Weight: {weight_kg}kg, Destination: {destination_country}")
+            logger.debug(f"   {req_desc}, Weight: {weight_kg}kg, Destination: {destination_country}")
 
             response = requests.post(rating_url, json=payload, headers=headers, timeout=30)
 
+            # Parse response
+            data = response.json()
+
+            # Check for HTTP errors
             if response.status_code != 200:
-                logger.error(f"❌ UPS API {api_type} error: {response.status_code} - {response.text}")
+                logger.error(f"❌ UPS API {api_type} HTTP error: {response.status_code}")
+                logger.error(f"   Response: {response.text}")
                 logger.debug(f"   Request payload: {json.dumps(payload, indent=2)}")
                 return []
 
-            # Parse response
-            data = response.json()
+            # Check for UPS business errors (new REST format)
+            if 'response' in data and 'errors' in data['response']:
+                errors = data['response']['errors']
+                for error in errors:
+                    error_code = error.get('code', 'UNKNOWN')
+                    error_msg = error.get('message', 'No message')
+                    logger.error(f"❌ UPS {api_type} business error {error_code}: {error_msg}")
+                logger.debug(f"   Request payload: {json.dumps(payload, indent=2)}")
+                return []
+
+            # Check for errors in classic RateResponse format
+            if 'RateResponse' in data:
+                resp = data['RateResponse'].get('Response', {})
+                if 'Error' in resp:
+                    err = resp['Error']
+                    error_code = err.get('ErrorCode', 'UNKNOWN')
+                    error_desc = err.get('ErrorDescription', 'No description')
+                    logger.error(
+                        f"❌ UPS {api_type} business error {error_code}: {error_desc}"
+                    )
+                    logger.debug(f"   Request payload: {json.dumps(payload, indent=2)}")
+                    return []
+
+            # Extract rates
             rates = []
 
             if 'RateResponse' in data and 'RatedShipment' in data['RateResponse']:
