@@ -157,10 +157,11 @@ class UPSAPIClient:
         self.tokens = {}  # Token cache
 
         # YOYAKU Paris origin address
+        # Note: StateProvinceCode required for NegotiatedRatesIndicator
         self.origin_address = {
             "AddressLine": "14 boulevard de la Chapelle",
             "City": "PARIS",
-            "StateProvinceCode": "",
+            "StateProvinceCode": "75",  # Paris department code
             "PostalCode": "75018",
             "CountryCode": "FR"
         }
@@ -352,7 +353,10 @@ class UPSAPIClient:
                             "Weight": str(weight_kg)
                         }
                     }
-                ]
+                ],
+                "ShipmentRatingOptions": {
+                    "NegotiatedRatesIndicator": ""
+                }
             }
 
             # Add specific service code if using "Rate" option
@@ -373,12 +377,6 @@ class UPSAPIClient:
                     "Shipment": shipment
                 }
             }
-
-            # Add NegotiatedRatesIndicator for contracted pricing
-            # This requests negotiated rates instead of retail rates
-            if 'RateInformation' not in payload['RateRequest']:
-                payload['RateRequest']['RateInformation'] = {}
-            payload['RateRequest']['RateInformation']['NegotiatedRatesIndicator'] = ''
 
             headers = {
                 'Content-Type': 'application/json',
