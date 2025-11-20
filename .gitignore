@@ -1,0 +1,26 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+*.egg-info/
+dist/
+build/
+
+# Data
+data/raw/*.pdf
+data/raw/*.xlsx
+data/raw/*.pptx
+*.csv.bak
+
+# IDE
+.vscode/
+.idea/
+*.swp
+
+# OS
+.DS_Store

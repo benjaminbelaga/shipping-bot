@@ -1,0 +1,9 @@
+country_label,country_iso2,solution_type,format,price_per_kg,fixed_amount
+ALLEMAGNE,DE,Service prioritaire suivi,Boxable,2.6,3.35
+ALLEMAGNE,DE,Service prioritaire suivi,Non boxable,2.6,3.35
+GRANDE-BRETAGNE,GB,Service prioritaire suivi,Boxable,2.6,3.15
+GRANDE-BRETAGNE,GB,Service prioritaire suivi,Non boxable,2.6,3.15
+ETATS-UNIS,US,Service prioritaire suivi,Encombrant,9.5,5.2
+ZONE 1,ZONE1,Service prioritaire suivi,Boxable,3.0,3.65
+ZONE 1,ZONE1,Service prioritaire suivi,Non boxable,3.0,3.65
+ZONE 2,ZONE2,Service prioritaire suivi,Encombrant,9.75,6.25

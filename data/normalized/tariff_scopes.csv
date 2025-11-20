@@ -1,0 +1,38 @@
+scope_id,service_id,code,description,is_catch_all
+1,1,DELIVENGO_DE_BOXABLE,Delivengo ALLEMAGNE - Boxable,False
+2,1,DELIVENGO_DE_NON_BOXABLE,Delivengo ALLEMAGNE - Non boxable,False
+3,1,DELIVENGO_GB_BOXABLE,Delivengo GRANDE-BRETAGNE - Boxable,False
+4,1,DELIVENGO_GB_NON_BOXABLE,Delivengo GRANDE-BRETAGNE - Non boxable,False
+5,1,DELIVENGO_US_ENCOMBRANT,Delivengo ETATS-UNIS - Encombrant,False
+6,1,DELIVENGO_ZONE1_BOXABLE,Delivengo ZONE 1 - Boxable,False
+7,1,DELIVENGO_ZONE1_NON_BOXABLE,Delivengo ZONE 1 - Non boxable,False
+8,1,DELIVENGO_ZONE2_ENCOMBRANT,Delivengo ZONE 2 - Encombrant,True
+9,2,SPRING_EU_AT,Spring EU - AT,False
+10,2,SPRING_EU_BE,Spring EU - BE,False
+11,2,SPRING_EU_DE,Spring EU - DE,False
+12,2,SPRING_EU_DK,Spring EU - DK,False
+13,2,SPRING_EU_FI,Spring EU - FI,False
+14,2,SPRING_EU_GR,Spring EU - GR,False
+15,2,SPRING_EU_HU,Spring EU - HU,False
+16,2,SPRING_EU_IE,Spring EU - IE,False
+17,2,SPRING_EU_IT,Spring EU - IT,False
+18,2,SPRING_EU_LU,Spring EU - LU,False
+19,2,SPRING_EU_PL,Spring EU - PL,False
+20,2,SPRING_EU_PT,Spring EU - PT,False
+21,2,SPRING_EU_RU,Spring EU - RU,False
+22,2,SPRING_EU_SE,Spring EU - SE,False
+23,2,SPRING_EU_TR,Spring EU - TR,False
+24,3,SPRING_ROW_AU,Spring ROW - AU,False
+25,3,SPRING_ROW_CA,Spring ROW - CA,False
+26,3,SPRING_ROW_CN,Spring ROW - CN,False
+27,3,SPRING_ROW_HK,Spring ROW - HK,False
+28,3,SPRING_ROW_ID,Spring ROW - ID,False
+29,3,SPRING_ROW_IL,Spring ROW - IL,False
+30,3,SPRING_ROW_IN,Spring ROW - IN,False
+31,3,SPRING_ROW_JP,Spring ROW - JP,False
+32,3,SPRING_ROW_KR,Spring ROW - KR,False
+33,3,SPRING_ROW_MY,Spring ROW - MY,False
+34,3,SPRING_ROW_SG,Spring ROW - SG,False
+35,3,SPRING_ROW_TH,Spring ROW - TH,False
+36,3,SPRING_ROW_TW,Spring ROW - TW,False
+37,3,SPRING_ROW_US,Spring ROW - US,False

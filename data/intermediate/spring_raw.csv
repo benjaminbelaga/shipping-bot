@@ -1,0 +1,494 @@
+region,region_label,country_label,country_iso2,weight_kg,price
+EU,Europe,Allemagne,DE,0.1,3.9
+EU,Europe,Allemagne,DE,0.25,4.0
+EU,Europe,Allemagne,DE,0.5,4.2
+EU,Europe,Allemagne,DE,0.75,4.4
+EU,Europe,Allemagne,DE,1.0,4.5
+EU,Europe,Allemagne,DE,1.5,4.9
+EU,Europe,Allemagne,DE,2.0,5.4
+EU,Europe,Allemagne,DE,3.0,6.3
+EU,Europe,Allemagne,DE,4.0,7.2
+EU,Europe,Allemagne,DE,5.0,8.2
+EU,Europe,Allemagne,DE,6.0,9.1
+EU,Europe,Allemagne,DE,7.0,9.8
+EU,Europe,Allemagne,DE,8.0,10.6
+EU,Europe,Allemagne,DE,9.0,11.3
+EU,Europe,Allemagne,DE,10.0,12.1
+EU,Europe,Allemagne,DE,15.0,15.9
+EU,Europe,Allemagne,DE,20.0,19.8
+EU,Europe,Autriche,AT,0.1,4.1
+EU,Europe,Autriche,AT,0.25,5.0
+EU,Europe,Autriche,AT,0.5,6.3
+EU,Europe,Autriche,AT,0.75,7.7
+EU,Europe,Autriche,AT,1.0,8.0
+EU,Europe,Autriche,AT,1.5,8.1
+EU,Europe,Autriche,AT,2.0,8.3
+EU,Europe,Autriche,AT,3.0,8.8
+EU,Europe,Autriche,AT,4.0,9.3
+EU,Europe,Autriche,AT,5.0,11.5
+EU,Europe,Autriche,AT,6.0,12.7
+EU,Europe,Autriche,AT,7.0,14.0
+EU,Europe,Autriche,AT,8.0,15.2
+EU,Europe,Autriche,AT,9.0,16.4
+EU,Europe,Autriche,AT,10.0,17.7
+EU,Europe,Autriche,AT,15.0,23.9
+EU,Europe,Autriche,AT,20.0,30.1
+EU,Europe,Belgique,BE,0.1,4.0
+EU,Europe,Belgique,BE,0.25,4.1
+EU,Europe,Belgique,BE,0.5,4.3
+EU,Europe,Belgique,BE,0.75,4.6
+EU,Europe,Belgique,BE,1.0,4.8
+EU,Europe,Belgique,BE,1.5,5.4
+EU,Europe,Belgique,BE,2.0,5.8
+EU,Europe,Belgique,BE,3.0,6.8
+EU,Europe,Belgique,BE,4.0,7.8
+EU,Europe,Belgique,BE,5.0,8.9
+EU,Europe,Belgique,BE,6.0,10.0
+EU,Europe,Belgique,BE,7.0,11.1
+EU,Europe,Belgique,BE,8.0,12.1
+EU,Europe,Belgique,BE,9.0,13.1
+EU,Europe,Belgique,BE,10.0,14.2
+EU,Europe,Belgique,BE,15.0,20.0
+EU,Europe,Belgique,BE,20.0,26.5
+EU,Europe,Danemark,DK,0.1,6.0
+EU,Europe,Danemark,DK,0.25,6.6
+EU,Europe,Danemark,DK,0.5,7.6
+EU,Europe,Danemark,DK,0.75,8.6
+EU,Europe,Danemark,DK,1.0,9.6
+EU,Europe,Danemark,DK,1.5,12.5
+EU,Europe,Danemark,DK,2.0,13.3
+EU,Europe,Danemark,DK,3.0,14.2
+EU,Europe,Danemark,DK,4.0,15.1
+EU,Europe,Danemark,DK,5.0,16.0
+EU,Europe,Danemark,DK,6.0,16.8
+EU,Europe,Danemark,DK,7.0,17.7
+EU,Europe,Danemark,DK,8.0,18.6
+EU,Europe,Danemark,DK,9.0,19.5
+EU,Europe,Danemark,DK,10.0,20.4
+EU,Europe,Danemark,DK,15.0,24.8
+EU,Europe,Danemark,DK,20.0,29.2
+EU,Europe,Finlande,FI,0.1,5.3
+EU,Europe,Finlande,FI,0.25,6.2
+EU,Europe,Finlande,FI,0.5,7.8
+EU,Europe,Finlande,FI,0.75,9.4
+EU,Europe,Finlande,FI,1.0,9.6
+EU,Europe,Finlande,FI,1.5,12.2
+EU,Europe,Finlande,FI,2.0,14.8
+EU,Europe,Finlande,FI,3.0,16.3
+EU,Europe,Finlande,FI,4.0,17.7
+EU,Europe,Finlande,FI,5.0,18.9
+EU,Europe,Finlande,FI,6.0,20.1
+EU,Europe,Finlande,FI,7.0,21.4
+EU,Europe,Finlande,FI,8.0,22.6
+EU,Europe,Finlande,FI,9.0,23.9
+EU,Europe,Finlande,FI,10.0,25.1
+EU,Europe,Finlande,FI,15.0,31.3
+EU,Europe,Finlande,FI,20.0,37.5
+EU,Europe,Grèce,GR,0.1,4.7
+EU,Europe,Grèce,GR,0.25,5.6
+EU,Europe,Grèce,GR,0.5,7.0
+EU,Europe,Grèce,GR,0.75,10.4
+EU,Europe,Grèce,GR,1.0,12.8
+EU,Europe,Grèce,GR,1.5,17.7
+EU,Europe,Grèce,GR,2.0,20.2
+EU,Europe,Grèce,GR,3.0,22.8
+EU,Europe,Grèce,GR,4.0,23.2
+EU,Europe,Grèce,GR,5.0,23.8
+EU,Europe,Grèce,GR,6.0,24.2
+EU,Europe,Grèce,GR,7.0,24.6
+EU,Europe,Grèce,GR,8.0,25.2
+EU,Europe,Grèce,GR,9.0,27.1
+EU,Europe,Grèce,GR,10.0,27.9
+EU,Europe,Grèce,GR,15.0,32.4
+EU,Europe,Grèce,GR,20.0,36.8
+EU,Europe,Hongrie,HU,0.1,3.5
+EU,Europe,Hongrie,HU,0.25,4.0
+EU,Europe,Hongrie,HU,0.5,5.2
+EU,Europe,Hongrie,HU,0.75,6.3
+EU,Europe,Hongrie,HU,1.0,7.4
+EU,Europe,Hongrie,HU,1.5,8.7
+EU,Europe,Hongrie,HU,2.0,8.9
+EU,Europe,Hongrie,HU,3.0,11.8
+EU,Europe,Hongrie,HU,4.0,13.0
+EU,Europe,Hongrie,HU,5.0,14.3
+EU,Europe,Hongrie,HU,6.0,18.1
+EU,Europe,Hongrie,HU,7.0,20.0
+EU,Europe,Hongrie,HU,8.0,22.0
+EU,Europe,Hongrie,HU,9.0,23.9
+EU,Europe,Hongrie,HU,10.0,25.8
+EU,Europe,Hongrie,HU,15.0,40.0
+EU,Europe,Hongrie,HU,20.0,49.6
+EU,Europe,Irlande,IE,0.1,4.5
+EU,Europe,Irlande,IE,0.25,4.8
+EU,Europe,Irlande,IE,0.5,5.3
+EU,Europe,Irlande,IE,0.75,5.9
+EU,Europe,Irlande,IE,1.0,6.5
+EU,Europe,Irlande,IE,1.5,7.6
+EU,Europe,Irlande,IE,2.0,8.7
+EU,Europe,Irlande,IE,3.0,10.9
+EU,Europe,Irlande,IE,4.0,13.1
+EU,Europe,Irlande,IE,5.0,15.3
+EU,Europe,Irlande,IE,6.0,17.5
+EU,Europe,Irlande,IE,7.0,19.7
+EU,Europe,Irlande,IE,8.0,22.0
+EU,Europe,Irlande,IE,9.0,24.2
+EU,Europe,Irlande,IE,10.0,26.4
+EU,Europe,Irlande,IE,15.0,37.5
+EU,Europe,Irlande,IE,20.0,48.5
+EU,Europe,Italie,IT,0.1,5.7
+EU,Europe,Italie,IT,0.25,5.9
+EU,Europe,Italie,IT,0.5,6.2
+EU,Europe,Italie,IT,0.75,6.6
+EU,Europe,Italie,IT,1.0,7.0
+EU,Europe,Italie,IT,1.5,7.8
+EU,Europe,Italie,IT,2.0,8.5
+EU,Europe,Italie,IT,3.0,11.0
+EU,Europe,Italie,IT,4.0,12.4
+EU,Europe,Italie,IT,5.0,13.9
+EU,Europe,Italie,IT,6.0,19.0
+EU,Europe,Italie,IT,7.0,20.5
+EU,Europe,Italie,IT,8.0,21.9
+EU,Europe,Italie,IT,9.0,23.4
+EU,Europe,Italie,IT,10.0,24.9
+EU,Europe,Italie,IT,15.0,34.2
+EU,Europe,Italie,IT,20.0,41.4
+EU,Europe,Luxembourg,LU,0.1,4.1
+EU,Europe,Luxembourg,LU,0.25,4.6
+EU,Europe,Luxembourg,LU,0.5,5.4
+EU,Europe,Luxembourg,LU,0.75,6.2
+EU,Europe,Luxembourg,LU,1.0,7.0
+EU,Europe,Luxembourg,LU,1.5,8.5
+EU,Europe,Luxembourg,LU,2.0,10.1
+EU,Europe,Luxembourg,LU,3.0,13.5
+EU,Europe,Luxembourg,LU,4.0,14.7
+EU,Europe,Luxembourg,LU,5.0,16.0
+EU,Europe,Luxembourg,LU,6.0,17.2
+EU,Europe,Luxembourg,LU,7.0,18.4
+EU,Europe,Luxembourg,LU,8.0,19.7
+EU,Europe,Luxembourg,LU,9.0,20.9
+EU,Europe,Luxembourg,LU,10.0,22.2
+EU,Europe,Luxembourg,LU,15.0,28.4
+EU,Europe,Luxembourg,LU,20.0,34.7
+EU,Europe,Pologne,PL,0.1,4.5
+EU,Europe,Pologne,PL,0.25,5.3
+EU,Europe,Pologne,PL,0.5,6.6
+EU,Europe,Pologne,PL,0.75,8.0
+EU,Europe,Pologne,PL,1.0,9.3
+EU,Europe,Pologne,PL,1.5,11.0
+EU,Europe,Pologne,PL,2.0,11.2
+EU,Europe,Pologne,PL,3.0,11.8
+EU,Europe,Pologne,PL,4.0,12.2
+EU,Europe,Pologne,PL,5.0,12.6
+EU,Europe,Pologne,PL,6.0,13.1
+EU,Europe,Pologne,PL,7.0,13.6
+EU,Europe,Pologne,PL,8.0,14.1
+EU,Europe,Pologne,PL,9.0,17.4
+EU,Europe,Pologne,PL,10.0,18.9
+EU,Europe,Pologne,PL,15.0,28.6
+EU,Europe,Pologne,PL,20.0,35.7
+EU,Europe,Portugal,PT,0.1,3.6
+EU,Europe,Portugal,PT,0.25,3.7
+EU,Europe,Portugal,PT,0.5,3.8
+EU,Europe,Portugal,PT,0.75,3.9
+EU,Europe,Portugal,PT,1.0,4.1
+EU,Europe,Portugal,PT,1.5,4.2
+EU,Europe,Portugal,PT,2.0,4.4
+EU,Europe,Portugal,PT,3.0,4.7
+EU,Europe,Portugal,PT,4.0,4.9
+EU,Europe,Portugal,PT,5.0,5.1
+EU,Europe,Portugal,PT,6.0,7.1
+EU,Europe,Portugal,PT,7.0,7.3
+EU,Europe,Portugal,PT,8.0,7.5
+EU,Europe,Portugal,PT,9.0,7.8
+EU,Europe,Portugal,PT,10.0,8.1
+EU,Europe,Portugal,PT,15.0,11.3
+EU,Europe,Portugal,PT,20.0,14.6
+EU,Europe,Suède,SE,0.1,4.1
+EU,Europe,Suède,SE,0.25,4.9
+EU,Europe,Suède,SE,0.5,6.3
+EU,Europe,Suède,SE,0.75,7.6
+EU,Europe,Suède,SE,1.0,9.0
+EU,Europe,Suède,SE,1.5,11.8
+EU,Europe,Suède,SE,2.0,14.6
+EU,Europe,Suède,SE,3.0,21.5
+EU,Europe,Suède,SE,4.0,22.8
+EU,Europe,Suède,SE,5.0,24.0
+EU,Europe,Suède,SE,6.0,25.3
+EU,Europe,Suède,SE,7.0,26.5
+EU,Europe,Suède,SE,8.0,27.7
+EU,Europe,Suède,SE,9.0,29.0
+EU,Europe,Suède,SE,10.0,30.2
+EU,Europe,Suède,SE,15.0,36.4
+EU,Europe,Suède,SE,20.0,42.7
+EU,Europe,Russie,RU,0.1,5.0
+EU,Europe,Russie,RU,0.25,6.1
+EU,Europe,Russie,RU,0.5,7.9
+EU,Europe,Russie,RU,0.75,9.8
+EU,Europe,Russie,RU,1.0,11.6
+EU,Europe,Russie,RU,1.5,15.3
+EU,Europe,Russie,RU,2.0,19.0
+EU,Europe,Russie,RU,3.0,32.9
+EU,Europe,Russie,RU,4.0,39.7
+EU,Europe,Russie,RU,5.0,46.4
+EU,Europe,Russie,RU,6.0,53.1
+EU,Europe,Russie,RU,7.0,59.8
+EU,Europe,Russie,RU,8.0,66.6
+EU,Europe,Russie,RU,9.0,73.2
+EU,Europe,Russie,RU,10.0,80.0
+EU,Europe,Russie,RU,15.0,113.7
+EU,Europe,Russie,RU,20.0,147.2
+EU,Europe,Turquie,TR,0.1,4.7
+EU,Europe,Turquie,TR,0.25,5.7
+EU,Europe,Turquie,TR,0.5,7.2
+EU,Europe,Turquie,TR,0.75,8.8
+EU,Europe,Turquie,TR,1.0,10.3
+EU,Europe,Turquie,TR,1.5,13.5
+EU,Europe,Turquie,TR,2.0,16.6
+EU,Europe,Turquie,TR,3.0,23.9
+EU,Europe,Turquie,TR,4.0,26.2
+EU,Europe,Turquie,TR,5.0,28.3
+EU,Europe,Turquie,TR,6.0,30.6
+EU,Europe,Turquie,TR,7.0,32.9
+EU,Europe,Turquie,TR,8.0,35.1
+EU,Europe,Turquie,TR,9.0,37.4
+EU,Europe,Turquie,TR,10.0,39.7
+EU,Europe,Turquie,TR,15.0,50.9
+EU,Europe,Turquie,TR,20.0,62.2
+ROW,Reste du monde,Canada,CA,0.1,8.3
+ROW,Reste du monde,Canada,CA,0.25,9.4
+ROW,Reste du monde,Canada,CA,0.5,11.2
+ROW,Reste du monde,Canada,CA,0.75,13.0
+ROW,Reste du monde,Canada,CA,1.0,14.9
+ROW,Reste du monde,Canada,CA,1.5,20.1
+ROW,Reste du monde,Canada,CA,2.0,23.8
+ROW,Reste du monde,Canada,CA,3.0,41.4
+ROW,Reste du monde,Canada,CA,4.0,49.6
+ROW,Reste du monde,Canada,CA,5.0,57.7
+ROW,Reste du monde,Canada,CA,6.0,65.9
+ROW,Reste du monde,Canada,CA,7.0,74.1
+ROW,Reste du monde,Canada,CA,8.0,82.3
+ROW,Reste du monde,Canada,CA,9.0,90.4
+ROW,Reste du monde,Canada,CA,10.0,98.6
+ROW,Reste du monde,Canada,CA,15.0,139.6
+ROW,Reste du monde,Canada,CA,20.0,180.5
+ROW,Reste du monde,États-Unis,US,0.1,8.3
+ROW,Reste du monde,États-Unis,US,0.25,9.8
+ROW,Reste du monde,États-Unis,US,0.5,12.0
+ROW,Reste du monde,États-Unis,US,0.75,14.3
+ROW,Reste du monde,États-Unis,US,1.0,16.6
+ROW,Reste du monde,États-Unis,US,1.5,22.8
+ROW,Reste du monde,États-Unis,US,2.0,27.4
+ROW,Reste du monde,États-Unis,US,3.0,47.0
+ROW,Reste du monde,États-Unis,US,4.0,55.0
+ROW,Reste du monde,États-Unis,US,5.0,63.2
+ROW,Reste du monde,États-Unis,US,6.0,71.2
+ROW,Reste du monde,États-Unis,US,7.0,79.2
+ROW,Reste du monde,États-Unis,US,8.0,87.2
+ROW,Reste du monde,États-Unis,US,9.0,95.2
+ROW,Reste du monde,États-Unis,US,10.0,103.2
+ROW,Reste du monde,États-Unis,US,15.0,143.4
+ROW,Reste du monde,États-Unis,US,20.0,183.6
+ROW,Reste du monde,Israël,IL,0.1,8.4
+ROW,Reste du monde,Israël,IL,0.25,9.6
+ROW,Reste du monde,Israël,IL,0.5,11.8
+ROW,Reste du monde,Israël,IL,0.75,13.9
+ROW,Reste du monde,Israël,IL,1.0,16.1
+ROW,Reste du monde,Israël,IL,1.5,21.8
+ROW,Reste du monde,Israël,IL,2.0,26.1
+ROW,Reste du monde,Israël,IL,3.0,31.7
+ROW,Reste du monde,Israël,IL,4.0,36.2
+ROW,Reste du monde,Israël,IL,5.0,40.7
+ROW,Reste du monde,Israël,IL,6.0,45.2
+ROW,Reste du monde,Israël,IL,7.0,49.8
+ROW,Reste du monde,Israël,IL,8.0,54.3
+ROW,Reste du monde,Israël,IL,9.0,58.8
+ROW,Reste du monde,Israël,IL,10.0,63.3
+ROW,Reste du monde,Israël,IL,15.0,85.9
+ROW,Reste du monde,Israël,IL,20.0,108.6
+ROW,Reste du monde,Chine,CN,0.1,7.7
+ROW,Reste du monde,Chine,CN,0.25,9.0
+ROW,Reste du monde,Chine,CN,0.5,11.1
+ROW,Reste du monde,Chine,CN,0.75,13.1
+ROW,Reste du monde,Chine,CN,1.0,15.2
+ROW,Reste du monde,Chine,CN,1.5,20.9
+ROW,Reste du monde,Chine,CN,2.0,23.3
+ROW,Reste du monde,Chine,CN,3.0,27.4
+ROW,Reste du monde,Chine,CN,4.0,34.3
+ROW,Reste du monde,Chine,CN,5.0,41.3
+ROW,Reste du monde,Chine,CN,6.0,48.2
+ROW,Reste du monde,Chine,CN,7.0,55.1
+ROW,Reste du monde,Chine,CN,8.0,62.0
+ROW,Reste du monde,Chine,CN,9.0,68.9
+ROW,Reste du monde,Chine,CN,10.0,75.9
+ROW,Reste du monde,Chine,CN,15.0,110.5
+ROW,Reste du monde,Chine,CN,20.0,145.1
+ROW,Reste du monde,Corée du Sud,KR,0.1,7.7
+ROW,Reste du monde,Corée du Sud,KR,0.25,8.9
+ROW,Reste du monde,Corée du Sud,KR,0.5,10.7
+ROW,Reste du monde,Corée du Sud,KR,0.75,12.7
+ROW,Reste du monde,Corée du Sud,KR,1.0,14.7
+ROW,Reste du monde,Corée du Sud,KR,1.5,20.1
+ROW,Reste du monde,Corée du Sud,KR,2.0,23.9
+ROW,Reste du monde,Corée du Sud,KR,3.0,29.2
+ROW,Reste du monde,Corée du Sud,KR,4.0,34.1
+ROW,Reste du monde,Corée du Sud,KR,5.0,39.2
+ROW,Reste du monde,Corée du Sud,KR,6.0,44.1
+ROW,Reste du monde,Corée du Sud,KR,7.0,49.2
+ROW,Reste du monde,Corée du Sud,KR,8.0,54.2
+ROW,Reste du monde,Corée du Sud,KR,9.0,59.1
+ROW,Reste du monde,Corée du Sud,KR,10.0,64.2
+ROW,Reste du monde,Corée du Sud,KR,15.0,89.2
+ROW,Reste du monde,Corée du Sud,KR,20.0,114.2
+ROW,Reste du monde,Hong Kong,HK,0.1,7.6
+ROW,Reste du monde,Hong Kong,HK,0.25,8.7
+ROW,Reste du monde,Hong Kong,HK,0.5,10.3
+ROW,Reste du monde,Hong Kong,HK,0.75,12.0
+ROW,Reste du monde,Hong Kong,HK,1.0,13.8
+ROW,Reste du monde,Hong Kong,HK,1.5,18.7
+ROW,Reste du monde,Hong Kong,HK,2.0,22.2
+ROW,Reste du monde,Hong Kong,HK,3.0,39.4
+ROW,Reste du monde,Hong Kong,HK,4.0,44.0
+ROW,Reste du monde,Hong Kong,HK,5.0,48.8
+ROW,Reste du monde,Hong Kong,HK,6.0,53.4
+ROW,Reste du monde,Hong Kong,HK,7.0,58.2
+ROW,Reste du monde,Hong Kong,HK,8.0,62.8
+ROW,Reste du monde,Hong Kong,HK,9.0,67.4
+ROW,Reste du monde,Hong Kong,HK,10.0,72.2
+ROW,Reste du monde,Hong Kong,HK,15.0,95.5
+ROW,Reste du monde,Hong Kong,HK,20.0,118.9
+ROW,Reste du monde,Inde,IN,0.1,7.7
+ROW,Reste du monde,Inde,IN,0.25,10.6
+ROW,Reste du monde,Inde,IN,0.5,15.9
+ROW,Reste du monde,Inde,IN,0.75,20.1
+ROW,Reste du monde,Inde,IN,1.0,21.7
+ROW,Reste du monde,Inde,IN,1.5,23.9
+ROW,Reste du monde,Inde,IN,2.0,24.4
+ROW,Reste du monde,Inde,IN,3.0,27.6
+ROW,Reste du monde,Inde,IN,4.0,30.2
+ROW,Reste du monde,Inde,IN,5.0,34.4
+ROW,Reste du monde,Inde,IN,6.0,38.7
+ROW,Reste du monde,Inde,IN,7.0,43.0
+ROW,Reste du monde,Inde,IN,8.0,47.2
+ROW,Reste du monde,Inde,IN,9.0,51.5
+ROW,Reste du monde,Inde,IN,10.0,55.7
+ROW,Reste du monde,Inde,IN,15.0,77.0
+ROW,Reste du monde,Inde,IN,20.0,98.3
+ROW,Reste du monde,Indonésie,ID,0.1,7.7
+ROW,Reste du monde,Indonésie,ID,0.25,10.5
+ROW,Reste du monde,Indonésie,ID,0.5,15.1
+ROW,Reste du monde,Indonésie,ID,0.75,19.8
+ROW,Reste du monde,Indonésie,ID,1.0,24.4
+ROW,Reste du monde,Indonésie,ID,1.5,26.6
+ROW,Reste du monde,Indonésie,ID,2.0,27.9
+ROW,Reste du monde,Indonésie,ID,3.0,30.4
+ROW,Reste du monde,Indonésie,ID,4.0,34.4
+ROW,Reste du monde,Indonésie,ID,5.0,38.5
+ROW,Reste du monde,Indonésie,ID,6.0,42.6
+ROW,Reste du monde,Indonésie,ID,7.0,46.7
+ROW,Reste du monde,Indonésie,ID,8.0,50.8
+ROW,Reste du monde,Indonésie,ID,9.0,54.9
+ROW,Reste du monde,Indonésie,ID,10.0,59.0
+ROW,Reste du monde,Indonésie,ID,15.0,79.4
+ROW,Reste du monde,Indonésie,ID,20.0,99.8
+ROW,Reste du monde,Japon,JP,0.1,8.4
+ROW,Reste du monde,Japon,JP,0.25,9.9
+ROW,Reste du monde,Japon,JP,0.5,12.2
+ROW,Reste du monde,Japon,JP,0.75,14.4
+ROW,Reste du monde,Japon,JP,1.0,16.7
+ROW,Reste du monde,Japon,JP,1.5,23.0
+ROW,Reste du monde,Japon,JP,2.0,27.6
+ROW,Reste du monde,Japon,JP,3.0,31.8
+ROW,Reste du monde,Japon,JP,4.0,36.7
+ROW,Reste du monde,Japon,JP,5.0,41.7
+ROW,Reste du monde,Japon,JP,6.0,46.5
+ROW,Reste du monde,Japon,JP,7.0,51.5
+ROW,Reste du monde,Japon,JP,8.0,56.4
+ROW,Reste du monde,Japon,JP,9.0,61.3
+ROW,Reste du monde,Japon,JP,10.0,66.2
+ROW,Reste du monde,Japon,JP,15.0,90.7
+ROW,Reste du monde,Japon,JP,20.0,115.3
+ROW,Reste du monde,Malaisie,MY,0.1,7.1
+ROW,Reste du monde,Malaisie,MY,0.25,9.6
+ROW,Reste du monde,Malaisie,MY,0.5,13.8
+ROW,Reste du monde,Malaisie,MY,0.75,17.8
+ROW,Reste du monde,Malaisie,MY,1.0,22.0
+ROW,Reste du monde,Malaisie,MY,1.5,25.3
+ROW,Reste du monde,Malaisie,MY,2.0,28.0
+ROW,Reste du monde,Malaisie,MY,3.0,30.4
+ROW,Reste du monde,Malaisie,MY,4.0,34.4
+ROW,Reste du monde,Malaisie,MY,5.0,38.5
+ROW,Reste du monde,Malaisie,MY,6.0,42.6
+ROW,Reste du monde,Malaisie,MY,7.0,46.7
+ROW,Reste du monde,Malaisie,MY,8.0,50.8
+ROW,Reste du monde,Malaisie,MY,9.0,54.9
+ROW,Reste du monde,Malaisie,MY,10.0,59.0
+ROW,Reste du monde,Malaisie,MY,15.0,79.4
+ROW,Reste du monde,Malaisie,MY,20.0,99.8
+ROW,Reste du monde,Singapour,SG,0.1,7.7
+ROW,Reste du monde,Singapour,SG,0.25,8.8
+ROW,Reste du monde,Singapour,SG,0.5,10.7
+ROW,Reste du monde,Singapour,SG,0.75,12.7
+ROW,Reste du monde,Singapour,SG,1.0,14.6
+ROW,Reste du monde,Singapour,SG,1.5,20.1
+ROW,Reste du monde,Singapour,SG,2.0,23.9
+ROW,Reste du monde,Singapour,SG,3.0,31.8
+ROW,Reste du monde,Singapour,SG,4.0,36.7
+ROW,Reste du monde,Singapour,SG,5.0,41.7
+ROW,Reste du monde,Singapour,SG,6.0,46.5
+ROW,Reste du monde,Singapour,SG,7.0,51.5
+ROW,Reste du monde,Singapour,SG,8.0,56.4
+ROW,Reste du monde,Singapour,SG,9.0,61.3
+ROW,Reste du monde,Singapour,SG,10.0,66.2
+ROW,Reste du monde,Singapour,SG,15.0,90.7
+ROW,Reste du monde,Singapour,SG,20.0,115.3
+ROW,Reste du monde,Thaïlande,TH,0.1,6.9
+ROW,Reste du monde,Thaïlande,TH,0.25,9.4
+ROW,Reste du monde,Thaïlande,TH,0.5,13.6
+ROW,Reste du monde,Thaïlande,TH,0.75,17.8
+ROW,Reste du monde,Thaïlande,TH,1.0,22.0
+ROW,Reste du monde,Thaïlande,TH,1.5,25.3
+ROW,Reste du monde,Thaïlande,TH,2.0,27.5
+ROW,Reste du monde,Thaïlande,TH,3.0,30.1
+ROW,Reste du monde,Thaïlande,TH,4.0,34.4
+ROW,Reste du monde,Thaïlande,TH,5.0,38.7
+ROW,Reste du monde,Thaïlande,TH,6.0,43.1
+ROW,Reste du monde,Thaïlande,TH,7.0,47.5
+ROW,Reste du monde,Thaïlande,TH,8.0,51.8
+ROW,Reste du monde,Thaïlande,TH,9.0,56.1
+ROW,Reste du monde,Thaïlande,TH,10.0,60.5
+ROW,Reste du monde,Thaïlande,TH,15.0,82.1
+ROW,Reste du monde,Thaïlande,TH,20.0,103.8
+ROW,Reste du monde,Taïwan,TW,0.1,7.6
+ROW,Reste du monde,Taïwan,TW,0.25,8.7
+ROW,Reste du monde,Taïwan,TW,0.5,10.4
+ROW,Reste du monde,Taïwan,TW,0.75,12.0
+ROW,Reste du monde,Taïwan,TW,1.0,13.8
+ROW,Reste du monde,Taïwan,TW,1.5,18.9
+ROW,Reste du monde,Taïwan,TW,2.0,22.3
+ROW,Reste du monde,Taïwan,TW,3.0,34.7
+ROW,Reste du monde,Taïwan,TW,4.0,39.2
+ROW,Reste du monde,Taïwan,TW,5.0,43.8
+ROW,Reste du monde,Taïwan,TW,6.0,48.3
+ROW,Reste du monde,Taïwan,TW,7.0,52.8
+ROW,Reste du monde,Taïwan,TW,8.0,57.3
+ROW,Reste du monde,Taïwan,TW,9.0,61.9
+ROW,Reste du monde,Taïwan,TW,10.0,66.4
+ROW,Reste du monde,Taïwan,TW,15.0,89.0
+ROW,Reste du monde,Taïwan,TW,20.0,111.6
+ROW,Reste du monde,Australie,AU,0.1,8.8
+ROW,Reste du monde,Australie,AU,0.25,10.5
+ROW,Reste du monde,Australie,AU,0.5,13.6
+ROW,Reste du monde,Australie,AU,0.75,16.5
+ROW,Reste du monde,Australie,AU,1.0,19.5
+ROW,Reste du monde,Australie,AU,1.5,27.0
+ROW,Reste du monde,Australie,AU,2.0,32.9
+ROW,Reste du monde,Australie,AU,3.0,49.3
+ROW,Reste du monde,Australie,AU,4.0,60.5
+ROW,Reste du monde,Australie,AU,5.0,71.6
+ROW,Reste du monde,Australie,AU,6.0,82.7
+ROW,Reste du monde,Australie,AU,7.0,93.8
+ROW,Reste du monde,Australie,AU,8.0,105.0
+ROW,Reste du monde,Australie,AU,9.0,116.0
+ROW,Reste du monde,Australie,AU,10.0,127.1
+ROW,Reste du monde,Australie,AU,15.0,182.7
+ROW,Reste du monde,Australie,AU,20.0,238.3
