@@ -1,0 +1,187 @@
+country_label,country_iso2,zone
+Afghanistan,AF,E
+Albania,AL,W
+Algeria,DZ,C
+American Samoa,AS,E
+Andorra,AD,S
+Angola,AO,E
+Anguilla,AI,D
+Antigua & Barbuda,AG,D
+Argentina,AR,D
+Aruba,AW,D
+Australia,AU,G
+Austria,AT,T
+Bahama,BS,D
+Bahrain,BH,C
+Bangladesh,BD,C
+Barbados,BB,D
+Belarus,BY,W
+Belgium,BE,R
+Belize,BZ,D
+Benin,BJ,E
+Bermuda,BM,D
+Bhutan,BT,C
+Bolivia,BO,D
+Bonaire Sint Eustatius and Saba,BQ,D
+Bosnia-Herzegovina,BA,W
+Botswana,BW,E
+Brazil,BR,D
+British Virgin Islands,VG,D
+Brunei,BN,C
+Bulgaria,BG,U
+Burkina Faso,BF,E
+Burundi,BI,E
+Cambodia,KH,B
+Cameroon,CM,E
+Canada,CA,A
+Cape Verde,CV,E
+Cayman Islands,KY,D
+Central African Republic,CF,E
+Chad,TD,E
+Chile,CL,D
+China,CN,F
+Colombia,CO,D
+Comoros,KM,E
+Congo,CG,E
+Cook Islands,CK,E
+Costa Rica,CR,D
+Croatia,HR,U
+Curacao,CW,D
+Cyprus,CY,W
+Czech Republic,CZ,U
+Denmark,DK,T
+Djibouti,DJ,E
+Dominica,DM,D
+Dominican Republic,DO,D
+Ecuador,EC,D
+Egypt,EG,C
+El Salvador,SV,D
+Equatorial Guinea,GQ,E
+Eritrea,ER,E
+Estonia,EE,U
+Ethiopia,ET,E
+Fiji,FJ,E
+Finland,FI,T
+French Guiana,GF,D
+French Polynesia,PF,E
+Gabon,GA,E
+Gambia,GM,E
+Germany,DE,R
+Ghana,GH,E
+Greece,GR,U
+Greenland,GL,E
+Grenada,GD,D
+Guadeloupe,GP,D
+Guam,GU,E
+Guatemala,GT,D
+Guinea,GN,E
+Guinea-Bissau,GW,E
+Guyana,GY,D
+Haiti,HT,D
+Honduras,HN,D
+"Hong Kong SAR, China",HK,F
+Hungary,HU,U
+Iceland,IS,W
+India,IN,C
+Indonesia,ID,B
+Ireland,IE,T
+Israel,IL,C
+Italy,IT,S
+Jamaica,JM,D
+Japan,JP,I
+Jordan,JO,C
+Kazakhstan,KZ,E
+Kenya,KE,E
+Kuwait,KW,C
+Kyrgyzstan,KG,E
+Laos,LA,B
+Latvia,LV,U
+Lebanon,LB,C
+Lesotho,LS,E
+Liberia,LR,E
+Libya,LY,C
+Liechtenstein,LI,V
+Lithuania,LT,U
+Luxembourg,LU,R
+Macedonia,MK,W
+Madagascar,MG,E
+Malawi,MW,E
+Malaysia,MY,B
+Maldives,MV,E
+Mali,ML,E
+Malta,MT,W
+Martinique,MQ,D
+Mauritania,MR,E
+Mauritius,MU,E
+Mexico,MX,D
+Mongolia,MN,E
+Montenegro,ME,W
+Morocco,MA,C
+Mozambique,MZ,E
+Myanmar,MM,C
+Namibia,NA,E
+Nepal,NP,C
+Netherlands,NL,R
+New Caledonia,NC,E
+New Zealand,NZ,G
+Nicaragua,NI,D
+Niger,NE,E
+Nigeria,NG,E
+Norway,NO,V
+Oman,OM,C
+Pakistan,PK,C
+Palau,PW,E
+Panama,PA,D
+Papua New Guinea,PG,E
+Paraguay,PY,D
+Peru,PE,D
+Poland,PL,T
+Portugal,PT,T
+Puerto Rico,PR,D
+Qatar,QA,C
+Romania,RO,U
+Rwanda,RW,E
+Saint Lucia,LC,D
+Samoa,WS,E
+San Marino,SM,S
+Saudi Arabia,SA,C
+Senegal,SN,E
+Serbia,RS,W
+Seychelles,SC,E
+Sierra Leone,SL,E
+Singapore,SG,I
+Slovakia,SK,U
+Slovenia,SI,U
+Solomon Islands,SB,E
+Somalia,SO,E
+South Africa,ZA,D
+Spain,ES,S
+Sri Lanka,LK,C
+Sudan,SD,E
+Suriname,SR,D
+Swaziland,SZ,E
+Sweden,SE,T
+Switzerland,CH,U
+Taiwan,TW,B
+Thailand,TH,B
+Togo,TG,E
+Tonga,TO,E
+Trinidad & Tobago,TT,D
+Tunisia,TN,C
+Turkey,TR,W
+Turkmenistan,TM,E
+Turks & Caicos Islands,TC,D
+U.S. Virgin Islands,VI,D
+U.S.A. - REST OF COUNTRY,US,H
+Uganda,UG,E
+Ukraine,UA,W
+United Kingdom (Great Britain),GB,X
+Uruguay,UY,D
+Uzbekistan,UZ,E
+Vanuatu,VU,E
+Vatican City,VA,S
+Venezuela,VE,D
+Vietnam,VN,B
+Yemen,YE,C
+Zambia,ZM,E
+Zimbabwe,ZW,E

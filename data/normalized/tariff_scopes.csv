@@ -36,3 +36,19 @@ scope_id,service_id,code,description,is_catch_all
 35,3,SPRING_ROW_TH,Spring ROW - TH,False
 36,3,SPRING_ROW_TW,Spring ROW - TW,False
 37,3,SPRING_ROW_US,Spring ROW - US,False
+38,4,FDX_IP_ZONE_A,FedEx IP Export - Zone A,False
+39,4,FDX_IP_ZONE_B,FedEx IP Export - Zone B,False
+40,4,FDX_IP_ZONE_C,FedEx IP Export - Zone C,False
+41,4,FDX_IP_ZONE_D,FedEx IP Export - Zone D,False
+42,4,FDX_IP_ZONE_E,FedEx IP Export - Zone E,False
+43,4,FDX_IP_ZONE_F,FedEx IP Export - Zone F,False
+44,4,FDX_IP_ZONE_G,FedEx IP Export - Zone G,False
+45,4,FDX_IP_ZONE_H,FedEx IP Export - Zone H,False
+46,4,FDX_IP_ZONE_I,FedEx IP Export - Zone I,False
+47,4,FDX_IP_ZONE_R,FedEx IP Export - Zone R,False
+48,4,FDX_IP_ZONE_S,FedEx IP Export - Zone S,False
+49,4,FDX_IP_ZONE_T,FedEx IP Export - Zone T,False
+50,4,FDX_IP_ZONE_U,FedEx IP Export - Zone U,False
+51,4,FDX_IP_ZONE_V,FedEx IP Export - Zone V,False
+52,4,FDX_IP_ZONE_W,FedEx IP Export - Zone W,False
+53,4,FDX_IP_ZONE_X,FedEx IP Export - Zone X,False

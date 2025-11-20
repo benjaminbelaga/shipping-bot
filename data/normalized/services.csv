@@ -2,3 +2,4 @@ service_id,carrier_id,code,label,direction,origin_iso2,incoterm,service_type,max
 1,1,DELIVENGO_2025,Delivengo Profil 2025,EXPORT,FR,DAP,MAIL,2.0,5000,2025-01-01,
 2,2,SPRING_EU_HOME,Spring Europe domicile,EXPORT,FR,DAP,PARCEL,20.0,5000,2025-01-01,
 3,2,SPRING_ROW_HOME,Spring Reste du monde domicile,EXPORT,FR,DAP,PARCEL,20.0,5000,2025-01-01,
+4,3,FDX_IP_EXPORT,FedEx International Priority Export,EXPORT,FR,DAP,EXPRESS,70.5,5000,2025-01-01,

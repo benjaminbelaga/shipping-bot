@@ -1,3 +1,4 @@
 carrier_id,code,name,currency
 1,LAPOSTE,La Poste,EUR
 2,SPRING,Spring Expéditions,EUR
+3,FEDEX,FedEx,EUR
