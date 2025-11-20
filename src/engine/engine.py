@@ -182,7 +182,8 @@ class PricingEngine:
         service_id: int,
         dest_iso2: str,
         weight_kg: float,
-        freight: Decimal
+        freight: Decimal,
+        conditions: Optional[Dict] = None
     ) -> Decimal:
         """
         Calcule le total des surcharges applicables
@@ -191,15 +192,35 @@ class PricingEngine:
         - PERCENT sur FREIGHT: surcharge = freight * value / 100
         - FLAT (per shipment): surcharge = value
         - PER_KG: surcharge = value * weight_kg
+
+        Conditions de filtrage:
+        - delivery_type: "residential" | "commercial"
+        - delivery_frequency: "weekly" | "daily"
+        - Autres conditions custom par transporteur
+
+        Ordre d'application (selon ARCHITECTURE.md):
+        1. Surcharges négatives (remises) en premier
+        2. Surcharges positives (frais) ensuite
+        3. Total final >= 0
         """
 
+        if conditions is None:
+            conditions = {}
+
         rules = self.loader.surcharges.get(service_id, [])
+
+        # Filtrer les règles applicables (vérifier conditions)
+        applicable_rules = []
+        for rule in rules:
+            if self._matches_conditions(rule.conditions, conditions):
+                applicable_rules.append(rule)
+
+        # Trier: négatives en premier, positives ensuite
+        applicable_rules.sort(key=lambda r: r.value)
+
         total = Decimal(0)
 
-        for rule in rules:
-            # TODO: Filtrer selon conditions (pays, poids, mode...)
-            # Pour l'instant, on applique toutes les surcharges du service
-
+        for rule in applicable_rules:
             if rule.kind == "PERCENT":
                 if rule.basis == "FREIGHT":
                     surcharge = freight * rule.value / Decimal(100)
@@ -221,6 +242,38 @@ class PricingEngine:
             total += surcharge
 
         return total
+
+    def _matches_conditions(self, rule_conditions: Dict, query_conditions: Dict) -> bool:
+        """
+        Vérifie si une règle de surcharge s'applique selon les conditions
+
+        Args:
+            rule_conditions: Conditions définies dans la règle (ex: {"delivery_type": "residential"})
+            query_conditions: Conditions de la requête utilisateur (ex: {"delivery_type": "residential"})
+
+        Returns:
+            True si la règle s'applique, False sinon
+
+        Logique:
+        - Si rule_conditions est vide {}, la règle s'applique toujours (surcharge universelle)
+        - Sinon, toutes les clés de rule_conditions doivent matcher query_conditions
+        """
+
+        # Règle sans conditions = s'applique toujours
+        if not rule_conditions:
+            return True
+
+        # Vérifier que chaque condition de la règle est satisfaite
+        for key, required_value in rule_conditions.items():
+            # Si la condition n'est pas présente dans la requête, la règle ne s'applique pas
+            if key not in query_conditions:
+                return False
+
+            # Si la valeur ne correspond pas, la règle ne s'applique pas
+            if query_conditions[key] != required_value:
+                return False
+
+        return True
 
 
 def main():

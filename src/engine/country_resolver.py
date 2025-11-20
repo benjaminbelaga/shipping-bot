@@ -5,6 +5,8 @@ Gère les alias, accents, variations orthographiques
 
 import re
 import unicodedata
+import csv
+from pathlib import Path
 from typing import Optional, Dict
 
 
@@ -213,12 +215,42 @@ class CountryResolver:
         "za": "ZA",
     }
 
-    def __init__(self):
-        self.alias_map = self._build_alias_map()
+    def __init__(self, aliases_csv: Optional[str] = None):
+        """
+        Initialize country resolver
 
-    def _build_alias_map(self) -> Dict[str, str]:
-        """Construit le mapping alias → ISO2"""
-        return {**self.ALIASES}
+        Args:
+            aliases_csv: Path to country_aliases.csv. If None, uses default location.
+        """
+        if aliases_csv is None:
+            # Default location relative to this file
+            base_path = Path(__file__).parent.parent.parent
+            aliases_csv = base_path / "data" / "normalized" / "country_aliases.csv"
+
+        self.alias_map = self._build_alias_map(aliases_csv)
+
+    def _build_alias_map(self, aliases_csv: Path) -> Dict[str, str]:
+        """
+        Build alias → ISO2 mapping from CSV file
+
+        Loads all aliases from country_aliases.csv and normalizes them
+        Falls back to hardcoded ALIASES if CSV not found
+        """
+        alias_map = {}
+
+        # Try to load from CSV
+        if Path(aliases_csv).exists():
+            with open(aliases_csv, 'r', encoding='utf-8') as f:
+                reader = csv.DictReader(f)
+                for row in reader:
+                    alias = self.normalize_string(row['alias'])
+                    iso2 = row['country_iso2']
+                    alias_map[alias] = iso2
+        else:
+            # Fallback to hardcoded aliases
+            alias_map = {**self.ALIASES}
+
+        return alias_map
 
     @staticmethod
     def normalize_string(s: str) -> str:
@@ -252,6 +284,10 @@ class CountryResolver:
             resolve("2kg Australie") -> "AU" (extrait le pays)
             resolve("au") -> "AU"
             resolve("??") -> None
+
+        Matching strategy:
+            1. Exact match (after normalization)
+            2. Fuzzy match: find alias substring in query (min 4 chars to avoid false positives)
         """
         if not country_name:
             return None
@@ -259,15 +295,22 @@ class CountryResolver:
         # Normaliser
         normalized = self.normalize_string(country_name)
 
-        # Chercher dans les alias
+        # Chercher dans les alias (exact match)
         if normalized in self.alias_map:
             return self.alias_map[normalized]
 
-        # Essayer de matcher un pays dans la chaîne
-        # (pour gérer "2kg Australie" ou "vers l'Australie")
+        # Fuzzy match: find country name within query string
+        # Only match aliases >= 4 chars to avoid false positives (like "at" in "atlantis")
+        matches = []
         for alias, iso2 in self.alias_map.items():
-            if alias in normalized:
-                return iso2
+            if len(alias) >= 4 and alias in normalized:
+                # Prioritize longer matches
+                matches.append((len(alias), alias, iso2))
+
+        if matches:
+            # Return the longest match (most specific)
+            matches.sort(reverse=True)
+            return matches[0][2]
 
         return None
 
