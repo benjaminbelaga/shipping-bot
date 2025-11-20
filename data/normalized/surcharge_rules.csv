@@ -1,3 +1,6 @@
 surcharge_id,service_id,name,kind,basis,value,conditions
 1,2,SPRING_EU_FUEL,PERCENT,FREIGHT,5.0,{}
 2,3,SPRING_ROW_FUEL,PERCENT,FREIGHT,5.0,{}
+3,5,UPS Fuel Discount,PERCENT,FREIGHT,-30.0,{}
+4,5,UPS Residential Discount,PERCENT,FREIGHT,-50.0,"{""delivery_type"": ""residential""}"
+5,6,UPS Weekly Delivery Surcharge,PERCENT,FREIGHT,100.0,"{""delivery_frequency"": ""weekly""}"

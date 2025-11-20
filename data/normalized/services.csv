@@ -3,3 +3,5 @@ service_id,carrier_id,code,label,direction,origin_iso2,incoterm,service_type,max
 2,2,SPRING_EU_HOME,Spring Europe domicile,EXPORT,FR,DAP,PARCEL,20.0,5000,2025-01-01,
 3,2,SPRING_ROW_HOME,Spring Reste du monde domicile,EXPORT,FR,DAP,PARCEL,20.0,5000,2025-01-01,
 4,3,FDX_IP_EXPORT,FedEx International Priority Export,EXPORT,FR,DAP,EXPRESS,70.5,5000,2025-01-01,
+5,4,UPS_EXPRESS_SAVER,UPS Express Saver,EXPORT,FR,DAP,EXPRESS,70.0,5000,2023-04-22,
+6,4,UPS_STANDARD,UPS Standard,EXPORT,FR,DAP,GROUND,70.0,5000,2023-04-22,
