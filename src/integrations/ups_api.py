@@ -374,6 +374,12 @@ class UPSAPIClient:
                 }
             }
 
+            # Add NegotiatedRatesIndicator for contracted pricing
+            # This requests negotiated rates instead of retail rates
+            if 'RateInformation' not in payload['RateRequest']:
+                payload['RateRequest']['RateInformation'] = {}
+            payload['RateRequest']['RateInformation']['NegotiatedRatesIndicator'] = ''
+
             headers = {
                 'Content-Type': 'application/json',
                 'Authorization': f'Bearer {access_token}',
@@ -435,10 +441,19 @@ class UPSAPIClient:
                     service_code = service.get('Code', 'Unknown')
                     service_name = self.SERVICE_NAMES.get(service_code, f'UPS Service {service_code}')
 
-                    # Total price
-                    total_charges = shipment.get('TotalCharges', {})
-                    price = Decimal(total_charges.get('MonetaryValue', '0'))
-                    currency = total_charges.get('CurrencyCode', 'EUR')
+                    # Try negotiated rates first (contracted pricing), fallback to retail
+                    negotiated = shipment.get('NegotiatedRateCharges', {})
+                    if negotiated and 'TotalCharge' in negotiated:
+                        total_charges = negotiated['TotalCharge']
+                        price = Decimal(total_charges.get('MonetaryValue', '0'))
+                        currency = total_charges.get('CurrencyCode', 'EUR')
+                        rate_type = 'negotiated'
+                    else:
+                        # Fallback to retail rates
+                        total_charges = shipment.get('TotalCharges', {})
+                        price = Decimal(total_charges.get('MonetaryValue', '0'))
+                        currency = total_charges.get('CurrencyCode', 'EUR')
+                        rate_type = 'retail'
 
                     # Estimated delivery time
                     delivery_days = self._estimate_delivery_days(service_code, destination_country)
@@ -449,7 +464,8 @@ class UPSAPIClient:
                         'price': price,
                         'currency': currency,
                         'delivery_days': delivery_days,
-                        'api_type': api_type
+                        'api_type': api_type,
+                        'rate_type': rate_type
                     })
 
             logger.info(f"✅ {len(rates)} UPS rates obtained for {weight_kg}kg to {destination_country}")

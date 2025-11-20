@@ -103,8 +103,10 @@ def test_single_destination(
             print(f"\n✅ SUCCESS: {len(rates)} rates obtained")
             print("\n📊 Rates:")
             for i, rate in enumerate(rates, 1):
+                rate_type_icon = "💰" if rate.get('rate_type') == 'negotiated' else "💵"
+                rate_type_label = "(négocié)" if rate.get('rate_type') == 'negotiated' else "(retail)"
                 print(f"   {i}. {rate['service_name']:35s}")
-                print(f"      Price: {float(rate['price']):6.2f} {rate['currency']}")
+                print(f"      Price: {rate_type_icon} {float(rate['price']):6.2f} {rate['currency']} {rate_type_label}")
                 print(f"      Delivery: {rate['delivery_days']} days")
                 print(f"      Service Code: {rate['service_code']}, API: {rate['api_type']}")
 
