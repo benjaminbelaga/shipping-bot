@@ -203,10 +203,10 @@ class TestGetName:
     """Test reverse lookup: ISO2 → English name"""
 
     def test_get_name_basic(self, resolver):
-        """get_name() should return English country names"""
+        """get_name() should return French country names"""
         assert resolver.get_name("FR") == "France"
-        assert resolver.get_name("DE") == "Allemagne"  # Based on country_aliases.csv
-        assert resolver.get_name("US") == "Etats-Unis"
+        assert resolver.get_name("DE") == "Allemagne"
+        assert resolver.get_name("US") == "États-Unis"  # Correct French with accent
         assert resolver.get_name("GB") == "Royaume-Uni"
         assert resolver.get_name("JP") == "Japon"
 
