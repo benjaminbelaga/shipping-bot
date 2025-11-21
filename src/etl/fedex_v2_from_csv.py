@@ -69,8 +69,8 @@ FEDEX_SERVICES = {
     }
 }
 
-# FedEx is carrier_id=1
-FEDEX_CARRIER_ID = 1
+# FedEx is carrier_id=3
+FEDEX_CARRIER_ID = 3
 
 # Base service_id for FedEx services (will auto-increment)
 # Check existing services.csv for next available ID
