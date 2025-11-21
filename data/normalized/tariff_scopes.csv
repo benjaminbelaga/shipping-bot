@@ -36,22 +36,6 @@ scope_id,service_id,code,description,is_catch_all
 35,3,SPRING_ROW_TH,Spring ROW - TH,False
 36,3,SPRING_ROW_TW,Spring ROW - TW,False
 37,3,SPRING_ROW_US,Spring ROW - US,False
-38,4,FDX_IP_ZONE_A,FedEx IP Export - Zone A,False
-39,4,FDX_IP_ZONE_B,FedEx IP Export - Zone B,False
-40,4,FDX_IP_ZONE_C,FedEx IP Export - Zone C,False
-41,4,FDX_IP_ZONE_D,FedEx IP Export - Zone D,False
-42,4,FDX_IP_ZONE_E,FedEx IP Export - Zone E,False
-43,4,FDX_IP_ZONE_F,FedEx IP Export - Zone F,False
-44,4,FDX_IP_ZONE_G,FedEx IP Export - Zone G,False
-45,4,FDX_IP_ZONE_H,FedEx IP Export - Zone H,False
-46,4,FDX_IP_ZONE_I,FedEx IP Export - Zone I,False
-47,4,FDX_IP_ZONE_R,FedEx IP Export - Zone R,False
-48,4,FDX_IP_ZONE_S,FedEx IP Export - Zone S,False
-49,4,FDX_IP_ZONE_T,FedEx IP Export - Zone T,False
-50,4,FDX_IP_ZONE_U,FedEx IP Export - Zone U,False
-51,4,FDX_IP_ZONE_V,FedEx IP Export - Zone V,False
-52,4,FDX_IP_ZONE_W,FedEx IP Export - Zone W,False
-53,4,FDX_IP_ZONE_X,FedEx IP Export - Zone X,False
 54,5,UPS_EXPRESS_SAVER_ZONE_1,UPS Express Saver - Zone 1,False
 55,5,UPS_EXPRESS_SAVER_ZONE_2,UPS Express Saver - Zone 2,False
 56,5,UPS_EXPRESS_SAVER_ZONE_3,UPS Express Saver - Zone 3,False
@@ -80,34 +64,6 @@ scope_id,service_id,code,description,is_catch_all
 79,5,UPS_EXPRESS_SAVER_ZONE_705,UPS Express Saver - Zone 705,False
 80,5,UPS_EXPRESS_SAVER_ZONE_706,UPS Express Saver - Zone 706,False
 81,5,UPS_EXPRESS_SAVER_ZONE_707,UPS Express Saver - Zone 707,False
-82,6,UPS_STANDARD_ZONE_1,UPS Standard - Zone 1,False
-83,6,UPS_STANDARD_ZONE_2,UPS Standard - Zone 2,False
-84,6,UPS_STANDARD_ZONE_3,UPS Standard - Zone 3,False
-85,6,UPS_STANDARD_ZONE_4,UPS Standard - Zone 4,False
-86,6,UPS_STANDARD_ZONE_5,UPS Standard - Zone 5,False
-87,6,UPS_STANDARD_ZONE_6,UPS Standard - Zone 6,False
-88,6,UPS_STANDARD_ZONE_7,UPS Standard - Zone 7,False
-89,6,UPS_STANDARD_ZONE_8,UPS Standard - Zone 8,False
-90,6,UPS_STANDARD_ZONE_9,UPS Standard - Zone 9,False
-91,6,UPS_STANDARD_ZONE_10,UPS Standard - Zone 10,False
-92,6,UPS_STANDARD_ZONE_11,UPS Standard - Zone 11,False
-93,6,UPS_STANDARD_ZONE_12,UPS Standard - Zone 12,False
-94,6,UPS_STANDARD_ZONE_13,UPS Standard - Zone 13,False
-95,6,UPS_STANDARD_ZONE_22,UPS Standard - Zone 22,False
-96,6,UPS_STANDARD_ZONE_33,UPS Standard - Zone 33,False
-97,6,UPS_STANDARD_ZONE_51,UPS Standard - Zone 51,False
-98,6,UPS_STANDARD_ZONE_52,UPS Standard - Zone 52,False
-99,6,UPS_STANDARD_ZONE_61,UPS Standard - Zone 61,False
-100,6,UPS_STANDARD_ZONE_71,UPS Standard - Zone 71,False
-101,6,UPS_STANDARD_ZONE_504,UPS Standard - Zone 504,False
-102,6,UPS_STANDARD_ZONE_505,UPS Standard - Zone 505,False
-103,6,UPS_STANDARD_ZONE_506,UPS Standard - Zone 506,False
-104,6,UPS_STANDARD_ZONE_507,UPS Standard - Zone 507,False
-105,6,UPS_STANDARD_ZONE_703,UPS Standard - Zone 703,False
-106,6,UPS_STANDARD_ZONE_704,UPS Standard - Zone 704,False
-107,6,UPS_STANDARD_ZONE_705,UPS Standard - Zone 705,False
-108,6,UPS_STANDARD_ZONE_706,UPS Standard - Zone 706,False
-109,6,UPS_STANDARD_ZONE_707,UPS Standard - Zone 707,False
 110,7,UPS_ECONOMY_DDU_EXPORT_FR_AE,UPS Economy DDU Export FR → AE,False
 111,7,UPS_ECONOMY_DDU_EXPORT_FR_AF,UPS Economy DDU Export FR → AF,False
 112,7,UPS_ECONOMY_DDU_EXPORT_FR_AM,UPS Economy DDU Export FR → AM,False
@@ -202,3 +158,79 @@ scope_id,service_id,code,description,is_catch_all
 201,10,UPS_EXPRESS_DDP_IMPORT_NL_CA,UPS Express DDP Import NL → CA,False
 202,10,UPS_EXPRESS_DDP_IMPORT_NL_GB,UPS Express DDP Import NL → GB,False
 203,10,UPS_EXPRESS_DDP_IMPORT_NL_US,UPS Express DDP Import NL → US,False
+204,11,FDX_IPE_ZONE_E,FedEx IPE Export - Zone E,False
+205,4,FDX_IP_ZONE_E,FedEx IP Export - Zone E,False
+206,12,FDX_IE_ZONE_E,FedEx IE Export - Zone E,False
+207,14,FDX_IPF_ZONE_E,FedEx IPF Export - Zone E,False
+208,15,FDX_IEF_ZONE_E,FedEx IEF Export - Zone E,False
+209,11,FDX_IPE_ZONE_W,FedEx IPE Export - Zone W,False
+210,4,FDX_IP_ZONE_W,FedEx IP Export - Zone W,False
+211,12,FDX_IE_ZONE_W,FedEx IE Export - Zone W,False
+212,14,FDX_IPF_ZONE_W,FedEx IPF Export - Zone W,False
+213,15,FDX_IEF_ZONE_W,FedEx IEF Export - Zone W,False
+214,11,FDX_IPE_ZONE_C,FedEx IPE Export - Zone C,False
+215,4,FDX_IP_ZONE_C,FedEx IP Export - Zone C,False
+216,12,FDX_IE_ZONE_C,FedEx IE Export - Zone C,False
+217,14,FDX_IPF_ZONE_C,FedEx IPF Export - Zone C,False
+218,15,FDX_IEF_ZONE_C,FedEx IEF Export - Zone C,False
+219,11,FDX_IPE_ZONE_S,FedEx IPE Export - Zone S,False
+220,4,FDX_IP_ZONE_S,FedEx IP Export - Zone S,False
+221,12,FDX_IE_ZONE_T,FedEx IE Export - Zone T,False
+222,14,FDX_IPF_ZONE_S,FedEx IPF Export - Zone S,False
+223,15,FDX_IEF_ZONE_T,FedEx IEF Export - Zone T,False
+224,11,FDX_IPE_ZONE_D,FedEx IPE Export - Zone D,False
+225,4,FDX_IP_ZONE_D,FedEx IP Export - Zone D,False
+226,12,FDX_IE_ZONE_D,FedEx IE Export - Zone D,False
+227,14,FDX_IPF_ZONE_D,FedEx IPF Export - Zone D,False
+228,15,FDX_IEF_ZONE_D,FedEx IEF Export - Zone D,False
+229,11,FDX_IPE_ZONE_G,FedEx IPE Export - Zone G,False
+230,4,FDX_IP_ZONE_G,FedEx IP Export - Zone G,False
+231,12,FDX_IE_ZONE_G,FedEx IE Export - Zone G,False
+232,14,FDX_IPF_ZONE_G,FedEx IPF Export - Zone G,False
+233,15,FDX_IEF_ZONE_G,FedEx IEF Export - Zone G,False
+234,11,FDX_IPE_ZONE_T,FedEx IPE Export - Zone T,False
+235,4,FDX_IP_ZONE_T,FedEx IP Export - Zone T,False
+236,13,FDX_RE_ZONE_T,FedEx RE Export - Zone T,False
+237,14,FDX_IPF_ZONE_T,FedEx IPF Export - Zone T,False
+238,16,FDX_REF_ZONE_T,FedEx REF Export - Zone T,False
+239,11,FDX_IPE_ZONE_R,FedEx IPE Export - Zone R,False
+240,4,FDX_IP_ZONE_R,FedEx IP Export - Zone R,False
+241,13,FDX_RE_ZONE_R,FedEx RE Export - Zone R,False
+242,14,FDX_IPF_ZONE_R,FedEx IPF Export - Zone R,False
+243,16,FDX_REF_ZONE_R,FedEx REF Export - Zone R,False
+244,11,FDX_IPE_ZONE_U,FedEx IPE Export - Zone U,False
+245,4,FDX_IP_ZONE_U,FedEx IP Export - Zone U,False
+246,13,FDX_RE_ZONE_U,FedEx RE Export - Zone U,False
+247,14,FDX_IPF_ZONE_U,FedEx IPF Export - Zone U,False
+248,16,FDX_REF_ZONE_U,FedEx REF Export - Zone U,False
+249,11,FDX_IPE_ZONE_B,FedEx IPE Export - Zone B,False
+250,4,FDX_IP_ZONE_B,FedEx IP Export - Zone B,False
+251,12,FDX_IE_ZONE_B,FedEx IE Export - Zone B,False
+252,14,FDX_IPF_ZONE_B,FedEx IPF Export - Zone B,False
+253,15,FDX_IEF_ZONE_B,FedEx IEF Export - Zone B,False
+254,11,FDX_IPE_ZONE_A,FedEx IPE Export - Zone A,False
+255,4,FDX_IP_ZONE_A,FedEx IP Export - Zone A,False
+256,12,FDX_IE_ZONE_A,FedEx IE Export - Zone A,False
+257,14,FDX_IPF_ZONE_A,FedEx IPF Export - Zone A,False
+258,15,FDX_IEF_ZONE_A,FedEx IEF Export - Zone A,False
+259,11,FDX_IPE_ZONE_F,FedEx IPE Export - Zone F,False
+260,4,FDX_IP_ZONE_F,FedEx IP Export - Zone F,False
+261,12,FDX_IE_ZONE_F,FedEx IE Export - Zone F,False
+262,14,FDX_IPF_ZONE_F,FedEx IPF Export - Zone F,False
+263,15,FDX_IEF_ZONE_F,FedEx IEF Export - Zone F,False
+264,12,FDX_IE_ZONE_U,FedEx IE Export - Zone U,False
+265,15,FDX_IEF_ZONE_U,FedEx IEF Export - Zone U,False
+266,13,FDX_RE_ZONE_S,FedEx RE Export - Zone S,False
+267,16,FDX_REF_ZONE_S,FedEx REF Export - Zone S,False
+268,11,FDX_IPE_ZONE_I,FedEx IPE Export - Zone I,False
+269,4,FDX_IP_ZONE_I,FedEx IP Export - Zone I,False
+270,12,FDX_IE_ZONE_I,FedEx IE Export - Zone I,False
+271,14,FDX_IPF_ZONE_I,FedEx IPF Export - Zone I,False
+272,15,FDX_IEF_ZONE_I,FedEx IEF Export - Zone I,False
+273,11,FDX_IPE_ZONE_V,FedEx IPE Export - Zone V,False
+274,4,FDX_IP_ZONE_V,FedEx IP Export - Zone V,False
+275,12,FDX_IE_ZONE_V,FedEx IE Export - Zone V,False
+276,14,FDX_IPF_ZONE_V,FedEx IPF Export - Zone V,False
+277,15,FDX_IEF_ZONE_V,FedEx IEF Export - Zone V,False
+278,13,FDX_RE_ZONE_V,FedEx RE Export - Zone V,False
+279,16,FDX_REF_ZONE_V,FedEx REF Export - Zone V,False

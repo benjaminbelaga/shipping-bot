@@ -82,8 +82,14 @@ class PricingBot(commands.Bot):
         logger.info(f"✅ Bot connected as {self.user}")
         logger.info(f"📊 Servers: {len(self.guilds)}")
         logger.info(f"👥 Users: {sum(g.member_count for g in self.guilds)}")
-        logger.info(f"🚚 Carriers: 4 (Delivengo, Spring, FedEx, UPS)")
-        logger.info(f"📦 Services: 10 (6 CSV + UPS API)")
+
+        # Dynamic counts from engine
+        carriers_count = len(self.pricing_engine.loader.carriers)
+        services_count = len(self.pricing_engine.loader.services)
+        carrier_names = ", ".join([c.name for c in self.pricing_engine.loader.carriers.values()])
+
+        logger.info(f"🚚 Carriers: {carriers_count} ({carrier_names})")
+        logger.info(f"📦 Services: {services_count}")
         logger.info("=" * 50)
 
         # Set bot status

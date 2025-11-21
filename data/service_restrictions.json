@@ -32,8 +32,7 @@
     }
   ],
   "notes": {
-    "UPS_STANDARD": "Service Ground économique pour Asie (10 pays: CN, GB, ID, JP, KH, LA, MY, PH, TW, VN)",
-    "UPS_EXPRESS_SAVER": "Service Express premium pour Asie (mêmes 10 pays que Standard)",
+    "UPS_EXPRESS_SAVER": "Service Express premium pour Asie (10 pays: CN, GB, ID, JP, KH, LA, MY, PH, TW, VN)",
     "UPS_ECONOMY_DDU_EXPORT_FR": "Service Economy worldwide (88 pays) - Équivalent UPS WWE - DDU (client paie douanes)",
     "UPS_ECONOMY_DDU_IMPORT_NL": "Import vers Pays-Bas uniquement (2 pays: GB, US)",
     "UPS_EXPRESS_DDP_EXPORT_DE": "Export depuis Allemagne (1 pays: GB) - DDP (YOYAKU paie douanes)",
