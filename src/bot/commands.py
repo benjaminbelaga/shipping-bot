@@ -139,10 +139,25 @@ def setup_commands(bot: 'PricingBot'):
             # Sort available offers by price
             available_offers.sort(key=lambda o: float(o.total))
 
-            # Rename UPS WWE carriers to distinguish from UPS API
+            # Rename UPS carriers to distinguish services clearly
             for offer in available_offers:
                 if offer.carrier_code == "UPS" and not offer.carrier_code.startswith("UPS_API"):
-                    offer.carrier_name = "UPS WWE"
+                    # Use service-specific names from CSV labels
+                    if offer.service_code == "UPS_STANDARD":
+                        offer.carrier_name = "UPS Standard"
+                    elif offer.service_code == "UPS_EXPRESS_SAVER":
+                        offer.carrier_name = "UPS Express Saver"
+                    elif offer.service_code == "UPS_ECONOMY_DDU_EXPORT_FR":
+                        offer.carrier_name = "UPS WWE"
+                    elif offer.service_code == "UPS_ECONOMY_DDU_IMPORT_NL":
+                        offer.carrier_name = "UPS WWE Import"
+                    elif offer.service_code == "UPS_EXPRESS_DDP_EXPORT_DE":
+                        offer.carrier_name = "UPS Express DDP"
+                    elif offer.service_code == "UPS_EXPRESS_DDP_IMPORT_NL":
+                        offer.carrier_name = "UPS Express Import"
+                    # Fallback to generic UPS for unknown services
+                    else:
+                        offer.carrier_name = f"UPS ({offer.service_code})"
 
             # Filter by carriers if specified
             if carrier_filter:
