@@ -1,0 +1,155 @@
+================================================================================
+FEDEX RAW DATA EXPORT - 2025-11-21
+================================================================================
+
+1. FEDEX SERVICES (from services.csv)
+--------------------------------------------------------------------------------
+Service ID: 4
+Code: FDX_IP_EXPORT
+Label: FedEx International Priority Export
+Type: EXPRESS
+Max Weight: 70.5kg
+
+
+2. FEDEX SCOPES (from tariff_scopes.csv)
+--------------------------------------------------------------------------------
+Scope 38: FDX_IP_ZONE_A - FedEx IP Export - Zone A
+Scope 39: FDX_IP_ZONE_B - FedEx IP Export - Zone B
+Scope 40: FDX_IP_ZONE_C - FedEx IP Export - Zone C
+Scope 41: FDX_IP_ZONE_D - FedEx IP Export - Zone D
+Scope 42: FDX_IP_ZONE_E - FedEx IP Export - Zone E
+Scope 43: FDX_IP_ZONE_F - FedEx IP Export - Zone F
+Scope 44: FDX_IP_ZONE_G - FedEx IP Export - Zone G
+Scope 45: FDX_IP_ZONE_H - FedEx IP Export - Zone H
+Scope 46: FDX_IP_ZONE_I - FedEx IP Export - Zone I
+Scope 47: FDX_IP_ZONE_R - FedEx IP Export - Zone R
+Scope 48: FDX_IP_ZONE_S - FedEx IP Export - Zone S
+Scope 49: FDX_IP_ZONE_T - FedEx IP Export - Zone T
+Scope 50: FDX_IP_ZONE_U - FedEx IP Export - Zone U
+Scope 51: FDX_IP_ZONE_V - FedEx IP Export - Zone V
+Scope 52: FDX_IP_ZONE_W - FedEx IP Export - Zone W
+Scope 53: FDX_IP_ZONE_X - FedEx IP Export - Zone X
+
+3. COUNTRIES PER SCOPE (from tariff_scope_countries.csv)
+--------------------------------------------------------------------------------
+
+Scope 38 (FDX_IP_ZONE_A): 1 countries
+  CA
+
+Scope 39 (FDX_IP_ZONE_B): 7 countries
+  ID, KH, LA, MY, TH, TW, VN
+
+Scope 40 (FDX_IP_ZONE_C): 22 countries
+  BD, BH, BN, BT, DZ, EG, IL, IN, JO, KW, LB, LK, LY, MA, MM, NP, OM, PK, QA, SA, TN, YE
+
+Scope 41 (FDX_IP_ZONE_D): 44 countries
+  AG, AI, AR, AW, BB, BM, BO, BQ, BR, BS, BZ, CL, CO, CR, CW, DM, DO, EC, GD, GF, GP, GT, GY, HN, HT, JM, KY, LC, MQ, MX, NI, PA, PE, PR, PY, SR, SV, TC, TT, UY, VE, VG, VI, ZA
+
+Scope 42 (FDX_IP_ZONE_E): 63 countries
+  , AF, AO, AS, BF, BI, BJ, BW, CF, CG, CK, CM, CV, DJ, ER, ET, FJ, GA, GH, GL, GM, GN, GQ, GU, GW, KE, KG, KM, KZ, LR, LS, MG, ML, MN, MR, MU, MV, MW, MZ, NC, NE, NG, PF, PG, PW, RW, SB, SC, SD, SL, SN, SO, SZ, TD, TG, TM, TO, UG, UZ, VU, WS, ZM, ZW
+
+Scope 43 (FDX_IP_ZONE_F): 2 countries
+  CN, HK
+
+Scope 44 (FDX_IP_ZONE_G): 2 countries
+  AU, NZ
+
+Scope 45 (FDX_IP_ZONE_H): 1 countries
+  US
+
+Scope 46 (FDX_IP_ZONE_I): 2 countries
+  JP, SG
+
+Scope 47 (FDX_IP_ZONE_R): 4 countries
+  BE, DE, LU, NL
+
+Scope 48 (FDX_IP_ZONE_S): 5 countries
+  AD, ES, IT, SM, VA
+
+Scope 49 (FDX_IP_ZONE_T): 7 countries
+  AT, DK, FI, IE, PL, PT, SE
+
+Scope 50 (FDX_IP_ZONE_U): 12 countries
+  BG, CH, CZ, EE, GR, HR, HU, LT, LV, RO, SI, SK
+
+Scope 51 (FDX_IP_ZONE_V): 2 countries
+  LI, NO
+
+Scope 52 (FDX_IP_ZONE_W): 11 countries
+  AL, BA, BY, CY, IS, ME, MK, MT, RS, TR, UA
+
+Scope 53 (FDX_IP_ZONE_X): 1 countries
+  GB
+
+4. TOTAL FEDEX COVERAGE
+--------------------------------------------------------------------------------
+Total unique countries: 186
+Countries: , AD, AF, AG, AI, AL, AO, AR, AS, AT, AU, AW, BA, BB, BD, BE, BF, BG, BH, BI, BJ, BM, BN, BO, BQ, BR, BS, BT, BW, BY, BZ, CA, CF, CG, CH, CK, CL, CM, CN, CO, CR, CV, CW, CY, CZ, DE, DJ, DK, DM, DO, DZ, EC, EE, EG, ER, ES, ET, FI, FJ, GA, GB, GD, GF, GH, GL, GM, GN, GP, GQ, GR, GT, GU, GW, GY, HK, HN, HR, HT, HU, ID, IE, IL, IN, IS, IT, JM, JO, JP, KE, KG, KH, KM, KW, KY, KZ, LA, LB, LC, LI, LK, LR, LS, LT, LU, LV, LY, MA, ME, MG, MK, ML, MM, MN, MQ, MR, MT, MU, MV, MW, MX, MY, MZ, NC, NE, NG, NI, NL, NO, NP, NZ, OM, PA, PE, PF, PG, PK, PL, PR, PT, PW, PY, QA, RO, RS, RW, SA, SB, SC, SD, SE, SG, SI, SK, SL, SM, SN, SO, SR, SV, SZ, TC, TD, TG, TH, TM, TN, TO, TR, TT, TW, UA, UG, US, UY, UZ, VA, VE, VG, VI, VN, VU, WS, YE, ZA, ZM, ZW
+
+5. MAJOR COUNTRIES TEST
+--------------------------------------------------------------------------------
+✅ US (scopes: 45)
+✅ CN (scopes: 43)
+✅ JP (scopes: 46)
+❌ KR
+✅ DE (scopes: 47)
+❌ FR
+✅ GB (scopes: 53)
+✅ AU (scopes: 44)
+✅ CA (scopes: 38)
+✅ BR (scopes: 41)
+✅ IN (scopes: 40)
+❌ RU
+❌ GE
+✅ ES (scopes: 48)
+✅ IT (scopes: 48)
+✅ NL (scopes: 47)
+✅ BE (scopes: 47)
+✅ CH (scopes: 50)
+
+6. WEIGHT BANDS SUMMARY (from tariff_bands.csv)
+--------------------------------------------------------------------------------
+Scope 38 (FDX_IP_ZONE_A): 1.5kg - 70.5kg (139 bands)
+Scope 39 (FDX_IP_ZONE_B): 2.5kg - 70.5kg (137 bands)
+Scope 40 (FDX_IP_ZONE_C): 1.5kg - 70.5kg (139 bands)
+Scope 41 (FDX_IP_ZONE_D): 1.5kg - 70.5kg (139 bands)
+Scope 42 (FDX_IP_ZONE_E): 1.0kg - 70.5kg (140 bands)
+Scope 43 (FDX_IP_ZONE_F): 2.0kg - 70.5kg (138 bands)
+Scope 44 (FDX_IP_ZONE_G): 1.0kg - 70.5kg (140 bands)
+Scope 45 (FDX_IP_ZONE_H): 1.5kg - 70.5kg (139 bands)
+Scope 46 (FDX_IP_ZONE_I): 2.0kg - 70.5kg (138 bands)
+Scope 47 (FDX_IP_ZONE_R): 24.0kg - 70.5kg (94 bands)
+Scope 48 (FDX_IP_ZONE_S): 5.5kg - 70.5kg (131 bands)
+Scope 49 (FDX_IP_ZONE_T): 8.5kg - 70.5kg (125 bands)
+Scope 50 (FDX_IP_ZONE_U): 14.0kg - 70.5kg (114 bands)
+Scope 51 (FDX_IP_ZONE_V): 14.0kg - 70.5kg (114 bands)
+Scope 52 (FDX_IP_ZONE_W): 14.0kg - 70.5kg (114 bands)
+Scope 53 (FDX_IP_ZONE_X): 14.0kg - 70.5kg (114 bands)
+
+7. SPECIFIC COUNTRY ANALYSIS
+--------------------------------------------------------------------------------
+
+Georgia (GE):
+  ❌ NOT covered by FedEx
+
+Germany (DE):
+  ✅ Covered by FedEx
+    Scope 47 (FDX_IP_ZONE_R): 24.0kg - 70.5kg
+
+South Korea (KR):
+  ❌ NOT covered by FedEx
+
+Russia (RU):
+  ❌ NOT covered by FedEx
+
+USA (US):
+  ✅ Covered by FedEx
+    Scope 45 (FDX_IP_ZONE_H): 1.5kg - 70.5kg
+
+Japan (JP):
+  ✅ Covered by FedEx
+    Scope 46 (FDX_IP_ZONE_I): 2.0kg - 70.5kg
+
+================================================================================
+END OF EXPORT
+================================================================================
